@@ -410,13 +410,13 @@ img {
 
 .profile-links{
   display: flex;
-  gap: 12px;
+  gap: 14px;
   margin-top: 12px;
 }
 
 .icon-link{
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1.5px solid currentColor;
   display: flex;
@@ -426,8 +426,8 @@ img {
 }
 
 .icon-link svg{
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   fill: currentColor;
 }
 
