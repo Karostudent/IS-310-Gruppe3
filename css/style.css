@@ -253,6 +253,10 @@ img {
   padding: 3.75rem 0;
 }
 
+.about-page .section {
+  padding: 1.25rem 0;
+}
+
 .section h2 {
   font-family: "Fraunces", Georgia, serif;
   font-size: 2rem;
@@ -274,6 +278,20 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .student-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .student-grid .card {
+    grid-column: span 2;
+  }
+
+  .student-grid .card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
 }
 
 .card {
@@ -346,6 +364,12 @@ img {
   display: block;
   color: var(--color-primary-dark);
   margin-bottom: 0.25rem;
+}
+
+@media (min-width: 900px) {
+  .value-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* ---------- Studentprofilside ---------- */
