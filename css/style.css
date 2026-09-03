@@ -2,18 +2,21 @@
    IS-310 Gruppe 3 – Felles stilark
    ========================================================================== */
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap");
+
 :root {
-  --color-primary: #0b3d91;
-  --color-primary-dark: #082a66;
-  --color-accent: #f2a900;
-  --color-bg: #f7f8fa;
+  --color-primary: #1d6255;
+  --color-primary-dark: #153d36;
+  --color-accent: #d76143;
+  --color-bg: #f3f6f2;
   --color-surface: #ffffff;
-  --color-text: #1f2430;
-  --color-muted: #5b6472;
-  --color-border: #e2e5eb;
-  --radius: 10px;
+  --color-text: #202b2a;
+  --color-muted: #5e6d69;
+  --color-border: #d9e1dc;
+  --color-highlight: #dcece7;
+  --radius: 6px;
   --max-width: 1080px;
-  --shadow: 0 4px 16px rgba(11, 61, 145, 0.08);
+  --shadow: 0 8px 24px rgba(21, 61, 54, 0.08);
 }
 
 * {
@@ -26,7 +29,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
@@ -58,7 +61,7 @@ img {
 .site-header {
   background-color: var(--color-primary);
   color: #fff;
-  box-shadow: var(--shadow);
+  box-shadow: 0 2px 14px rgba(21, 61, 54, 0.15);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -74,8 +77,11 @@ img {
 }
 
 .site-title {
-  font-size: 1.3rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.35rem;
   font-weight: 700;
+  letter-spacing: 0;
+  margin: 0;
   color: #fff;
 }
 
@@ -98,42 +104,137 @@ img {
 
 .main-nav a {
   color: #fff;
-  font-weight: 500;
+  font-size: 0.94rem;
+  font-weight: 600;
 }
 
 .main-nav a:hover,
 .main-nav a:focus,
 .main-nav a.active {
-  color: var(--color-accent);
+  color: #f6c8a9;
+  text-decoration: none;
+}
+
+.student-menu {
+  position: relative;
+}
+
+.student-menu details {
+  position: relative;
+}
+
+.student-menu summary {
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.94rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.student-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.student-menu summary::after {
+  content: " +";
+}
+
+.student-menu details[open] summary,
+.student-menu summary:hover,
+.student-menu summary:focus {
+  color: #f6c8a9;
+}
+
+.student-menu details[open] summary::after {
+  content: " -";
+}
+
+.student-menu-list {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 0;
+  left: 0;
+  margin: 0.75rem 0 0;
+  min-width: 10rem;
+  padding: 0.4rem;
+  position: absolute;
+  top: 100%;
+  z-index: 20;
+}
+
+.student-menu-list li {
+  width: 100%;
+}
+
+.student-menu-list a {
+  color: var(--color-text);
+  display: block;
+  padding: 0.5rem 0.7rem;
+}
+
+.student-menu-list a:hover,
+.student-menu-list a:focus,
+.student-menu-list a.active {
+  background-color: var(--color-highlight);
+  color: var(--color-primary-dark);
+}
+
+.student-page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding-top: 2rem;
+}
+
+.student-page-nav a {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+}
+
+.student-page-nav a:hover,
+.student-page-nav a:focus,
+.student-page-nav a.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
   text-decoration: none;
 }
 
 /* ---------- Hero-seksjon ---------- */
 
 .hero {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  color: #fff;
-  padding: 4rem 0;
-  text-align: center;
+  background-color: var(--color-highlight);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-primary-dark);
+  padding: 5rem 0;
+  text-align: left;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2.4rem, 5vw, 4.25rem);
+  line-height: 1.08;
+  margin: 0 0 0.9rem;
 }
 
 .hero p {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   max-width: 640px;
-  margin: 0 auto 1.5rem;
-  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 1.75rem;
+  color: var(--color-muted);
 }
 
 .btn {
   display: inline-block;
-  padding: 0.7rem 1.5rem;
+  padding: 0.78rem 1.35rem;
   background-color: var(--color-accent);
-  color: var(--color-primary-dark);
+  color: #fff;
   font-weight: 700;
   border-radius: var(--radius);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -149,12 +250,14 @@ img {
 /* ---------- Generelle seksjoner ---------- */
 
 .section {
-  padding: 3rem 0;
+  padding: 3.75rem 0;
 }
 
 .section h2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 0 1rem;
   color: var(--color-primary-dark);
 }
 
@@ -178,21 +281,21 @@ img {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 1.5rem;
+  padding: 1.75rem 1.5rem;
   text-align: center;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(11, 61, 145, 0.15);
+  box-shadow: 0 12px 28px rgba(21, 61, 54, 0.14);
 }
 
 .card .avatar {
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  background-color: var(--color-border);
+  background-color: var(--color-highlight);
   margin: 0 auto 1rem;
   display: flex;
   align-items: center;
@@ -203,6 +306,7 @@ img {
 }
 
 .card h3 {
+  font-family: "Fraunces", Georgia, serif;
   margin: 0 0 0.25rem;
 }
 
@@ -233,7 +337,8 @@ img {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--color-accent);
+  padding: 1.1rem 1.25rem;
   box-shadow: var(--shadow);
 }
 
@@ -260,7 +365,7 @@ img {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background-color: var(--color-border);
+  background-color: var(--color-highlight);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -275,7 +380,7 @@ img {
 }
 
 .video-placeholder {
-  background-color: #eef1f5;
+  background-color: #eaf1ed;
   border: 2px dashed var(--color-border);
   border-radius: var(--radius);
   padding: 2rem;
