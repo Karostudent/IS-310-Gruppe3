@@ -408,6 +408,16 @@ img {
   width: 100%;
 }
 
+.profile .role {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0.25rem 0 1.25rem;
+  letter-spacing: 0.01em;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
 .profile-links{
   display: flex;
   gap: 14px;
