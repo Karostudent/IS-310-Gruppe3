@@ -446,6 +446,21 @@ img {
   background-color: currentColor;
 }
 
+.mail-text {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.92rem;
+  color: var(--color-muted);
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.mail-text:hover,
+.mail-text:focus-visible {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
 .icon-link:hover svg,
 .icon-link:focus-visible svg{
   fill: var(--bakgrunnsfarge, #fff);
