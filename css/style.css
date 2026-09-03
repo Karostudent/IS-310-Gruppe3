@@ -288,10 +288,6 @@ img {
   .student-grid .card {
     grid-column: span 2;
   }
-
-  .student-grid .card:nth-child(4) {
-    grid-column: 2 / span 2;
-  }
 }
 
 .card {
