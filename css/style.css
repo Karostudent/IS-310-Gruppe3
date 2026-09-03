@@ -408,9 +408,62 @@ img {
   width: 100%;
 }
 
-.profile-links a {
-  margin-right: 1rem;
+.profile .role {
+  color: var(--color-primary);
   font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0.25rem 0 1.25rem;
+  letter-spacing: 0.01em;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-links{
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.icon-link{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .15s, color .15s;
+}
+
+.icon-link svg{
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.icon-link:hover,
+.icon-link:focus-visible{
+  background-color: currentColor;
+}
+
+.mail-text {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.92rem;
+  color: var(--color-muted);
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.mail-text:hover,
+.mail-text:focus-visible {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.icon-link:hover svg,
+.icon-link:focus-visible svg{
+  fill: var(--bakgrunnsfarge, #fff);
 }
 
 .video-placeholder {
@@ -426,7 +479,6 @@ img {
 @media (max-width: 640px) {
   .profile {
     grid-template-columns: 1fr;
-    text-align: center;
   }
 
   .profile .avatar {
