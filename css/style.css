@@ -412,9 +412,37 @@ img {
   width: 100%;
 }
 
-.profile-links a {
-  margin-right: 1rem;
-  font-weight: 600;
+.profile-links{
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.icon-link{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .15s, color .15s;
+}
+
+.icon-link svg{
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.icon-link:hover,
+.icon-link:focus-visible{
+  background-color: currentColor;
+}
+
+.icon-link:hover svg,
+.icon-link:focus-visible svg{
+  fill: var(--bakgrunnsfarge, #fff);
 }
 
 .video-placeholder {
