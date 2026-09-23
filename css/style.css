@@ -358,8 +358,9 @@ img {
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 1rem;
+  align-items: stretch;
 }
 
 .value-list li {
@@ -369,6 +370,14 @@ img {
   border-left: 3px solid var(--color-accent);
   padding: 1.1rem 1.25rem;
   box-shadow: var(--shadow);
+  grid-column: span 4;
+}
+
+.value-list li:nth-child(4),
+.value-list li:nth-child(5) {
+  grid-column: span 6;
+  justify-self: center;
+  width: min(100%, 27rem);
 }
 
 .value-list li strong {
@@ -377,9 +386,17 @@ img {
   margin-bottom: 0.25rem;
 }
 
-@media (min-width: 900px) {
+@media (max-width: 767px) {
   .value-list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .value-list li,
+  .value-list li:nth-child(4),
+  .value-list li:nth-child(5) {
+    grid-column: auto;
+    width: 100%;
+    justify-self: stretch;
   }
 }
 
