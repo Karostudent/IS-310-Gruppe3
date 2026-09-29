@@ -10,11 +10,12 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <p class="site-title"><a href="index.html">Gruppe 3 – Perspektiv</a></p>
       <nav class="main-nav" aria-label="Hovednavigasjon">
         <ul>
           <li><a href="index.html" class="active" aria-current="page">Forside</a></li>
-          <li><a href="om-oss.html">Om gruppa</a></li>
+          <li><a href="om-oss.html">Om oss</a></li>
+          <li><a href="prosjekt.html">Prosjekt</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
           <li class="student-menu">
             <details>
               <summary>Studentene</summary>
@@ -33,19 +34,25 @@
     </div>
   </header>
 
+  <a class="fixed-logo" href="index.html" aria-label="Gå til forsiden">
+    <img src="images/Logo.png" data-large-logo="images/Logo.png" data-small-logo="images/Perspektiv.png" alt="Perspektiv" />
+  </a>
+
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Perspektiv</h1>
-        <p>
-          Seks bachelorstudenter i IS-310 Prosjektgjennomføring, klare til å ta fatt på
-          nye utfordringer sammen med en bedrift som ønsker friske øyne og engasjement.
-        </p>
-        <a class="btn" href="om-oss.html">Les mer om gruppa vår</a>
+        <div class="hero-copy">
+          <h1><span>Sammen</span> ser vi hele bildet.</h1>
+          <p>Seks ulike perspektiver. Ett felles mål.</p>
+        </div>
+        <a class="btn" href="om-oss.html">Les mer om oss</a>
+        <div class="scroll-indicator">
+          <a href="#studentene" aria-label="Gå ned til studentene">↓</a>
+        </div>
       </div>
     </section>
 
-    <section class="section container">
+    <section id="studentene" class="section container">
       <h2>Møt studentene</h2>
       <p>
         Klikk deg inn på hver enkelt student for å lese en kort presentasjon  
@@ -93,7 +100,7 @@
         </article>
 
         <article class="card">
-          <div class="avatar"><img src="images/Henos.jpeg" alt="Portrett av Henos Habtab Weldegiorgis" /></div>
+          <div class="avatar"><img src="images/Henoshw.jpg" alt="Portrett av Henos Habtab Weldegiorgis" /></div>
           <h3>Henos Habtab Weldegiorgis</h3>
           <p class="role">Student / 3. år IT og informasjonssystemer</p>
           <a href="studenter/student6.html" aria-label="Se presentasjon for Henos Habtab Weldegiorgis">Se presentasjon &rarr;</a>
@@ -125,24 +132,20 @@
       Vi liker å forstå hvorfor noe ikke fungerer, finne mulighetene og omsette
       innsikt til løsninger som faktisk kan brukes.
     </li>
-    <li>
-      <strong>Struktur møter kreativitet</strong>
-      Vi kombinerer planlegging, analyse og ansvarlighet med nysgjerrighet,
-      kreativitet og vilje til å utfordre etablerte løsninger.
-    </li>
-    <li>
-      <strong>Vi gjør det sammen</strong>
-      Vi spiller på hverandres styrker, utfordrer hverandres ideer og tar
-      felles ansvar for framdrift og resultat.
-    </li>
   </ul>
 </section>
 
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Gruppe 3 – IS-310 Prosjektgjennomføring</p>
+      <div class="footer-cta">
+        <p class="footer-tagline">Sammen ser vi hele bildet.</p>
+        <a class="btn" href="kontakt.html">Ta kontakt</a>
+      </div>
+      <p class="footer-brand">Gruppe 3 – Perspektiv</p>
+      <p>&copy; 2026 IS-310 Prosjektgjennomføring</p>
     </div>
   </footer>
+  <script src="js/logo-scroll.js"></script>
 </body>
 </html>

@@ -10,11 +10,12 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <p class="site-title"><a href="index.html">Gruppe 3 – IS-310</a></p>
       <nav class="main-nav" aria-label="Hovednavigasjon">
         <ul>
           <li><a href="index.html">Forside</a></li>
-          <li><a href="om-oss.html" class="active">Om gruppa</a></li>
+          <li><a href="om-oss.html" class="active">Om oss</a></li>
+          <li><a href="prosjekt.html">Prosjekt</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
           <li class="student-menu">
             <details>
               <summary>Studentene</summary>
@@ -33,25 +34,63 @@
     </div>
   </header>
 
+  <a class="fixed-logo" href="index.html" aria-label="Gå til forsiden">
+    <img src="images/Logo.png" data-large-logo="images/Logo.png" data-small-logo="images/Perspektiv.png" alt="Perspektiv" />
+  </a>
+
   <main class="about-page">
     <section class="hero">
       <div class="container">
         <h1>Perspektiv</h1>
         <p>Seks studenter. Seks ulike perspektiver – ett felles mål.</p>
+        <div class="cta-row">
+          <a class="btn" href="kontakt.html">Ta kontakt</a>
+        </div>
+        <div class="scroll-indicator">
+          <a href="#om-oss-start" aria-label="Gå ned til innholdet">↓</a>
+        </div>
       </div>
     </section>
 
-    <section class="section container">
-      <h2>Hvem er Perspektiv?</h2>
-      <p>
-        Vi er mellom 23 og 46 år, representerer fire nasjonaliteter og har tatt ganske forskjellige veier fram til samme bachelorgrad.
-      </p>
-      <p>
-        I gruppa finnes erfaring fra alt fra arkiv, sjømannskap og kokkeyrket til internasjonal politikk, mediestudier og musikkliv. To av oss har allerede mastergrader fra andre fagområder.
-      </p>
-      <p>
-        Nå samler vi denne bredden rundt teknologi, systemutvikling og problemløsing.
-      </p>
+    <section id="om-oss-start" class="section container about-media-section" aria-labelledby="about-video-title">
+      <div class="about-text-copy">
+        <h2>Møt Perspektiv</h2>
+        <p>Ulike veier, ett felles mål.</p>
+        <p>Vi er mellom 23 og 46 år, representerer fire nasjonaliteter og har tatt ganske forskjellige veier fram til samme bachelorgrad.</p>
+        <p>I gruppa finnes erfaring fra alt fra arkiv, sjømannskap og kokkeyrket til internasjonal politikk, media- og musikkproduksjon. To av oss har allerede mastergrader fra andre fagområder.</p>
+        <p>Nå samler vi denne bredden rundt teknologi, systemutvikling og problemløsing.</p>
+      </div>
+      <div class="about-video-column">
+        <div class="about-video-copy">
+          <p class="about-kicker">Introvideo</p>
+          <h2 id="about-video-title">Slik jobber vi sammen</h2>
+        </div>
+        <video class="about-video" controls preload="metadata" playsinline>
+          <source src="images/Midlertidig%20intor%20video.mp4" type="video/mp4" />
+          Nettleseren din støtter ikke videoavspilling.
+        </video>
+      </div>
+    </section>
+
+    <section class="section container about-highlights" aria-label="Dette tar vi med oss">
+      <article>
+        <h3>Hvem ønsker vi å samarbeide med?</h3>
+        <p>Offentlig, privat eller frivillig sektor er mindre viktig for oss enn selve utfordringen.</p>
+        <p>Vi ønsker en oppdragsgiver som vil slippe oss tett nok på virksomheten til at vi kan forstå problemet ordentlig, møte relevante brukere og utfordre både egne og oppdragsgivers antakelser underveis.</p>
+        <p>Til gjengjeld kommer vi med seks engasjerte studenter, bred erfaring og vilje til å legge ned arbeidet som kreves for å skape noe som har verdi også etter at bacheloroppgaven er levert.</p>
+      </article>
+      <article>
+        <h3>Teknologi møter virkeligheten</h3>
+        <p>Gjennom studiet har vi opparbeidet kompetanse innen blant annet systemutvikling, programmering, frontend- og fullstackutvikling, brukeropplevelse, universell utforming, informasjonssikkerhet, prosjektarbeid og informasjonsforvaltning.</p>
+        <p>Men vi kommer ikke bare med studiepoeng. Gruppa har erfaring fra fire ulike praksisplasser, i tillegg til arbeidserfaring fra en rekke bransjer og organisasjoner.</p>
+        <p>For oss er derfor ikke spørsmålet bare «Kan vi bygge det?», men også: «Hvilket problem skal det løse – og for hvem?»</p>
+      </article>
+      <article>
+        <h3>Seks hoder rundt samme problem</h3>
+        <p>I et prosjekt trenger man både den som ser detaljene og den som løfter blikket. Den som stiller det kritiske spørsmålet. Den som skaper struktur. Den som får en ny idé. Og den som sørger for at ideen faktisk blir gjennomført.</p>
+        <p>Vi har erfaring med planlegging, prosessanalyse, problemløsing, ansvar og effektiv gjennomføring – men også med kreative fag, kommunikasjon og arbeid med mennesker.</p>
+        <p>Det betyr at vi kan utfordre hverandres antakelser og betrakte det samme problemet fra flere sider.</p>
+      </article>
     </section>
 
     <section class="section container">
@@ -153,5 +192,6 @@
       <p>&copy; 2026 Gruppe 3 – IS-310 Prosjektgjennomføring</p>
     </div>
   </footer>
+  <script src="js/logo-scroll.js"></script>
 </body>
 </html>
