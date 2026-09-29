@@ -406,12 +406,12 @@ img {
   padding: 0.5rem 1.5rem 0;
 }
 
-.contact-page .about-page .section {
+.contact-page .contact-content .section {
   padding: 0.5rem 1.5rem 0;
 }
 
 .contact-page .contact-grid {
-  gap: 0.25rem;
+  gap: 1.5rem;
   grid-template-columns: repeat(2, minmax(0, 360px));
   justify-content: center;
   margin-top: 0.5rem;
@@ -1247,6 +1247,7 @@ img {
   }
 
   .contact-page .contact-grid {
+    gap: 0.5rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
