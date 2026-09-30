@@ -355,8 +355,9 @@ img {
 }
 
 .contact-hero .container {
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero .container {
@@ -420,12 +421,13 @@ img {
 }
 
 .contact-page .contact-hero h1 {
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(2.125rem, 3.75vw, 3.125rem);
   margin-bottom: 0.35rem;
 }
 
 .contact-page .contact-hero p {
-  font-size: clamp(0.92rem, 1.35vw, 1.1rem);
+  font-size: clamp(1.06rem, 1.44vw, 1.25rem);
+  max-width: 580px;
   margin-bottom: 0;
 }
 
@@ -439,7 +441,7 @@ img {
 
 .contact-page .contact-grid {
   gap: 1.5rem;
-  grid-template-columns: repeat(2, minmax(0, 360px));
+  grid-template-columns: repeat(2, minmax(0, 350px));
   justify-content: center;
   justify-items: center;
   margin-top: 0.25rem;
@@ -448,7 +450,7 @@ img {
 .contact-page .contact-card {
   justify-self: center;
   padding: 1rem;
-  width: min(100%, 360px);
+  width: min(100%, 350px);
 }
 
 .contact-page .contact-card img {
