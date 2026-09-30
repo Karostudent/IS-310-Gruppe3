@@ -739,8 +739,8 @@ img {
 }
 
 .card .avatar {
-  width: 96px;
-  height: 96px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   background-color: var(--color-highlight);
   overflow: hidden;
@@ -1504,4 +1504,32 @@ img {
     gap: 0.5rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+.site-header .container {
+  padding-left: calc(1.5rem + clamp(182px, 31.2vw, 364px) + 1rem);
+}
+
+.student-page .site-header .container {
+  padding-left: calc(1.5rem + clamp(110px, 18vw, 170px) + 1rem);
+}
+
+.contact-page .site-header .container {
+  padding-left: calc(clamp(160px, 26vw, 300px) + 1rem);
+}
+
+@media (max-width: 767px) {
+  .site-header .container {
+    padding-left: calc(1rem + clamp(110px, 42vw, 170px) + 0.75rem);
+  }
+}
+
+
+.fixed-logo:not(.logo-over-image) {
+  background: rgba(248, 247, 251, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  box-shadow: 0 2px 10px rgba(23, 21, 43, 0.08);
 }
