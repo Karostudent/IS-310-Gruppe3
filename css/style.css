@@ -1505,3 +1505,21 @@ img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+.site-header .container {
+  padding-left: calc(1.5rem + clamp(182px, 31.2vw, 364px) + 1rem);
+}
+
+.student-page .site-header .container {
+  padding-left: calc(1.5rem + clamp(110px, 18vw, 170px) + 1rem);
+}
+
+.contact-page .site-header .container {
+  padding-left: calc(clamp(160px, 26vw, 300px) + 1rem);
+}
+
+@media (max-width: 767px) {
+  .site-header .container {
+    padding-left: calc(1rem + clamp(110px, 42vw, 170px) + 0.75rem);
+  }
+}
