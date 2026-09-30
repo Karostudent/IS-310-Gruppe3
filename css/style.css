@@ -739,8 +739,8 @@ img {
 }
 
 .card .avatar {
-  width: 96px;
-  height: 96px;
+  width: 175px;
+  height: 175px;
   border-radius: 50%;
   background-color: var(--color-highlight);
   overflow: hidden;
