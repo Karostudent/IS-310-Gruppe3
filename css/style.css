@@ -410,7 +410,7 @@ img {
 }
 
 .contact-page .fixed-logo {
-  --logo-width: clamp(182px, 31.2vw, 364px);
+  --logo-width: clamp(160px, 26vw, 300px);
   left: 0;
   position: fixed;
   top: 0;
