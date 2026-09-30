@@ -2,7 +2,7 @@ const logoLink = document.querySelector(".fixed-logo");
 
 if (logoLink) {
   const logo = logoLink.querySelector("img");
-  const hero = document.querySelector(".hero");
+  const hero = document.querySelector(".hero, .project-hero");
   let frameRequested = false;
   let showingSmallLogo = false;
 
@@ -19,7 +19,10 @@ if (logoLink) {
       logo.src = showingSmallLogo ? logo.dataset.smallLogo : logo.dataset.largeLogo;
     }
 
-    logoLink.classList.toggle("logo-over-image", Boolean(hero && window.scrollY < hero.offsetHeight));
+    const isProjectPage = document.body.classList.contains("project-page");
+    const shouldUseLightLogo = isProjectPage || Boolean(hero && window.scrollY < hero.offsetHeight);
+
+    logoLink.classList.toggle("logo-over-image", shouldUseLightLogo);
     frameRequested = false;
   }
 

@@ -9,6 +9,7 @@
   --color-primary-dark: #17152b;
   --color-secondary: #291c5c;
   --color-accent: #09203f;
+  --color-hero-accent: #ffffff;
   --color-bg: #f8f7fb;
   --color-surface: #ffffff;
   --color-text: #202033;
@@ -128,19 +129,19 @@ img {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
 }
 
 .main-nav a {
   color: #fff;
-  font-size: 0.94rem;
+  font-size: 1.08rem;
   font-weight: 600;
   border: 1px solid transparent;
   border-radius: var(--radius);
   display: inline-block;
-  padding: 0.35rem 0.6rem;
+  padding: 0.5rem 0.75rem;
 }
 
 .main-nav a:hover,
@@ -306,37 +307,51 @@ img {
 }
 
 .contact-page .site-header {
-  color: var(--color-primary-dark);
+  color: #fff;
+  z-index: 20;
 }
 
 .contact-page .main-nav a,
 .contact-page .student-menu summary {
+  color: #fff;
+  font-size: 1.25rem;
+  padding: 0.65rem 0.9rem;
+}
+
+.contact-page .main-nav ul {
+  gap: 1.75rem;
+}
+
+.contact-page .student-menu-list a {
+  color: var(--color-text);
+}
+
+.contact-page .student-menu-list a:hover,
+.contact-page .student-menu-list a:focus {
   color: var(--color-primary-dark);
 }
 
 .contact-page .main-nav a.active,
 .contact-page .main-nav a:hover,
-.contact-page .main-nav a:focus,
-.contact-page .student-menu summary {
-  background-color: var(--color-highlight);
-  border-color: var(--color-border);
-  color: var(--color-primary-dark);
+.contact-page .main-nav a:focus {
+  background-color: rgba(0, 0, 0, 0.28);
+  border-color: rgba(255, 255, 255, 0.65);
+  color: #fff;
 }
+
 .contact-page .fixed-logo img {
-  filter: brightness(0) saturate(100%);
+  filter: brightness(0) invert(1);
 }
 
 .contact-page .site-header .main-nav a:hover,
 .contact-page .student-menu summary:hover,
 .contact-page .student-menu summary:focus {
-  color: var(--color-accent);
+  color: #fff;
 }
 
 .contact-hero h1,
-.contact-hero p,
-.contact-card .role,
-.contact-card a {
-  color: var(--color-primary-dark);
+.contact-hero p {
+  color: #fff;
 }
 
 .contact-hero .container {
@@ -364,7 +379,7 @@ img {
 }
 
 .hero h1 span {
-  color: var(--color-accent);
+  color: var(--color-hero-accent);
 }
 
 .hero p {
@@ -375,21 +390,33 @@ img {
 }
 
 .contact-page .hero p {
-  color: var(--color-primary-dark);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-page {
+  background: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url("../images/Trees.png") center center / cover no-repeat fixed;
   height: 100svh;
   overflow: hidden;
 }
 
+.contact-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-page .contact-content {
+  transform: none;
+}
+
 .contact-page .fixed-logo {
-  --logo-width: clamp(110px, 18vw, 170px);
-  top: 1rem;
+  --logo-width: clamp(182px, 31.2vw, 364px);
+  left: 0;
+  position: fixed;
+  top: 0;
 }
 
 .contact-page .contact-hero {
-  padding: 4.5rem 0 0.5rem;
+  padding: 2.75rem 0 0.25rem;
 }
 
 .contact-page .contact-hero h1 {
@@ -403,18 +430,19 @@ img {
 }
 
 .contact-page .section {
-  padding: 0.5rem 1.5rem 0;
+  padding: 0.25rem 1.5rem 0;
 }
 
 .contact-page .contact-content .section {
-  padding: 0.5rem 1.5rem 0;
+  padding: 0.25rem 1.5rem 0;
 }
 
 .contact-page .contact-grid {
   gap: 1.5rem;
   grid-template-columns: repeat(2, minmax(0, 360px));
   justify-content: center;
-  margin-top: 0.5rem;
+  justify-items: center;
+  margin-top: 0.25rem;
 }
 
 .contact-page .contact-card {
@@ -438,12 +466,6 @@ img {
 .contact-page .contact-card .role {
   font-size: 0.9rem;
   margin-bottom: 0.35rem;
-}
-
-.contact-page .contact-footer {
-  height: 2.25rem;
-  margin-top: 1rem;
-  padding: 0;
 }
 
 .btn {
@@ -935,6 +957,50 @@ img {
   width: 100%;
 }
 
+.profile-sidebar {
+  width: 160px;
+}
+
+.student-project {
+  align-self: start;
+  text-align: center;
+  width: 160px;
+}
+
+.student-project h2 {
+  color: var(--color-primary-dark);
+  font-size: 1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.student-project a {
+  align-items: center;
+  display: flex;
+  height: 4.5rem;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+}
+
+.student-project a:hover,
+.student-project a:focus {
+  text-decoration: none;
+}
+
+.student-project img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.student-project img.uia-project-logo {
+  max-width: 78%;
+}
+
+.student-project img.krs-project-logo {
+  transform: scale(1.15);
+}
+
 .profile .role {
   color: var(--color-primary);
   font-weight: 600;
@@ -1113,8 +1179,8 @@ img {
   max-width: 42rem;
 }
 
-.project-section-heading .project-kicker {
-  color: var(--color-accent);
+.project-page .project-section-heading .project-kicker {
+  color: #d8e2f0;
 }
 
 .project-section h2 {
@@ -1123,6 +1189,62 @@ img {
   font-size: clamp(1.8rem, 3vw, 2.7rem);
   line-height: 1.1;
   margin: 0;
+}
+
+.project-cta {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 0;
+  padding: 0 1.5rem 3rem;
+}
+
+.project-cta .btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: none;
+  color: #fff;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding: 0.9rem 1.5rem;
+}
+
+.project-cta .btn:hover,
+.project-cta .btn:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.project-practice-links {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: 0 1.5rem 4rem;
+}
+
+.project-practice-links a {
+  align-items: center;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius);
+  display: flex;
+  height: 7rem;
+  justify-content: center;
+  padding: 1rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.project-practice-links a:hover,
+.project-practice-links a:focus {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.project-practice-links img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .solution-grid {
@@ -1281,6 +1403,11 @@ img {
   .news-collage figure:nth-child(n) {
     grid-column: auto;
     grid-row: auto;
+  }
+
+  .project-practice-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-bottom: 2.5rem;
   }
 }
 
