@@ -15,8 +15,8 @@
           <summary>Meny</summary>
           <ul>
           <li><a href="index.html" class="active" aria-current="page">Forside</a></li>
-          <li><a href="møt-studentene.html">Møt studentene</a></li>
           <li><a href="om-oss.html">Gruppen</a></li>
+          <li><a href="møt-studentene.html">Møt studentene</a></li>
           <li><a href="prosjekt.html">Prosjekt</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
           </ul>
@@ -36,15 +36,28 @@
           <h1><span>Sammen om </span>å se det store bildet.</h1>
           <p>Seks ulike perspektiver. Ett felles mål.</p>
         </div>
-        <a class="btn" href="om-oss.html">Les mer om oss</a>
+
+      <div class="home-video-placeholder">
+          <video class="about-video" controls preload="metadata" playsinline>
+          <source src="images/Midlertidig%20intor%20video.mp4" type="video/mp4" />
+          Nettleseren din støtter ikke videoavspilling.
+        </video>
+      </div>
+
+
+       
+        <a class="btn" href="om-oss.html">Les mer om gruppen</a>
         <a class="btn" href="møt-studentene.html">Møt studentene</a>
+        <a class="btn" href="møt-studentene.html#home-practice-section">Våre praksisprosjekter</a>
+        <a class="btn" href="#home-values-section">Hvorfor velge oss?</a>
         <div class="scroll-indicator">
-          <a href="#studentene" aria-label="Gå ned til studentene">↓</a>
+          <a href="#home-values-section" aria-label="Gå ned til hvorfor velge oss-seksjonen">↓</a>
         </div>
+        
       </div>
     </section>
 
-  <section class="section container">
+  <section id="home-values-section" class="section container home-values-section">
       <h2>Hvorfor velge oss?</h2>
       <p>
         Fordi gode løsninger sjelden kommer fra bare én måte å se problemet på.
@@ -71,68 +84,7 @@
       </ul>
     </section>
 
-    <section class="section container practice-section">
-      <h2>Våre praksisprosjekter</h2>
-      <p>
-        Dette semesteret tar vi med erfaringene våre fra skolebenken ut i
-        arbeidslivet for å hjelpe bedrifter med å finne bedre løsninger på
-        utfordringene sine.
-      </p>
-
-      <div class="practice-grid">
-        <article class="practice-card">
-          <div class="practice-logo">
-            <img src="images/Logo/KRS Kommune Logo.png" alt="Kristiansand kommune-logo" />
-          </div>
-          <h3>Kristiansand kommune</h3>
-          <p>
-            Karoline forenkler kommunens behandling av ALIS-søknader og utvikler
-            en prototype på en digital søknadsportal.
-          </p>
-          <a class="btn" href="https://praksis-i-kristiansand-kommune-f6avada4atbnemcf.germanywestcentral-01.azurewebsites.net/prosjekt" target="_blank" rel="noopener noreferrer">Se prosjektet</a>
-        </article>
-
-        <article class="practice-card">
-          <div class="practice-logo">
-            <img src="images/Logo/Uia Logo.png" alt="Uia Hjelp-logo" />
-          </div>
-          <h3>Uia Hjelp</h3>
-          <p>
-            Henos videreutvikler en chatbot for UiA som skal gjøre det enklere
-            for studenter og ansatte å finne relevant informasjon på UiAs
-            nettsider.
-          </p>
-          <a class="btn" href="https://praksis-uiahtml.vercel.app/" target="_blank" rel="noopener noreferrer">Se prosjektet</a>
-        </article>
-
-        <article class="practice-card">
-          <div class="practice-logo">
-            <img src="images/Logo/Spring Marketing logo.png" alt="Spring Marketing-logo" />
-          </div>
-          <h3>Spring Marketing</h3>
-          <p>
-            Halvard utvikler PlukkeFun, en løsning som skal gjøre ordreplukking
-            hos Elefun enklere og gi lageransatte bedre oversikt over arbeidsflyt
-            og avvik.
-          </p>
-          <a class="btn" href="https://haldvar.github.io/index.html" target="_blank" rel="noopener noreferrer">Se prosjektet</a>
-        </article>
-
-        <article class="practice-card">
-          <div class="practice-logo">
-            <img src="images/Logo/logodigi.png" alt="Digi Agder-logo" />
-          </div>
-          <h3>Digi Agder</h3>
-          <p>
-            Helle videreutvikler et KI-kart over KI-prosjekter i offentlig
-            sektor i Agder, og bidrar i arbeidet med KI og organisasjonsutvikling
-            i kommunene.
-          </p>
-          <a class="btn" href="https://sites.google.com/view/digi-agder-praksis-2026/prosjektoppgave" target="_blank" rel="noopener noreferrer">Se prosjektet</a>
-        </article>
-      </div>
-    </section>
-
+   
     
 
 

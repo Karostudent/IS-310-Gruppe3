@@ -393,13 +393,36 @@ img {
 }
 
 .home-hero {
-  background-image: url("../images/%C3%85pen%20venstre.jpg");
+  background-image: url("../images/Hoyrestilt_cropped.jpg");
   background-size: cover;
 }
 
 .home-hero .container {
   justify-content: center;
-  transform: translateY(-2rem);
+  transform: translateY(0.5rem);
+}
+
+.home-video-placeholder {
+  align-items: center;
+  aspect-ratio: 16 / 9;
+  background-color: rgba(23, 21, 43, 0.78);
+  border: 2px dashed rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius);
+  color: #fff;
+  display: flex;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.1rem;
+  justify-content: center;
+  max-width: 20rem;
+  padding: 1rem;
+  text-align: center;
+  width: 80%;
+}
+
+@media (min-width: 768px) and (max-width: 1099px) {
+  .home-hero .container {
+    transform: translateY(0.5rem);
+  }
 }
 
 @media (min-aspect-ratio: 5 / 3) and (min-width: 768px) {
@@ -425,28 +448,50 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
   padding-top: 10rem;
 }
 
+.student-list-back-to-top {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto 0;
+  max-width: var(--max-width);
+  padding: 0 1.5rem;
+}
+
+.student-list-page .practice-section {
+  scroll-margin-top: 8rem;
+}
+
 .student-list-page {
   background: url("../images/Trees.png") center / cover no-repeat fixed;
 }
 
-.student-list-page main > .section > h2,
+.student-list-page main > .section > h2 {
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(23, 21, 43, 0.8);
+}
+
 .student-list-page main > .section > p {
   color: #fff;
   text-shadow: 0 1px 4px rgba(23, 21, 43, 0.8);
 }
 
 .about-page > .hero {
-  background-image: url("../images/%C3%85pen%20venstre.jpg");
-  background-position: center top;
+  background-image: url("../images/Hoyrestilt.jpg");
+  background-position: left top;
   background-size: contain;
   padding: 7rem 0 1.5rem;
 }
 
 .about-hero .container {
+  margin: 0;
+  max-width: none;
   justify-content: center;
 }
 
 @media (min-width: 1280px) {
+  .about-page > .hero {
+    min-height: max(100svh, calc(66.6667vw - 2rem));
+  }
+
   .about-hero .container {
     transform: translateY(1.5rem);
   }
@@ -462,9 +507,9 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 
 @media (min-width: 1280px) {
   .about-hero .about-text-copy {
-    width: clamp(21rem, 27vw, 24rem);
-    padding: 0.8rem;
-    font-size: clamp(0.88rem, 1.1vw, 0.92rem);
+    width: calc(48vw - 1.5rem);
+    max-width: none;
+    font-size: clamp(0.92rem, 1.05vw, 1.2rem);
     line-height: 1.35;
   }
 
@@ -498,7 +543,7 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 
   .about-page > .hero::before {
     aspect-ratio: 3 / 2;
-    background: url("../images/%C3%85pen%20venstre.jpg") center / contain no-repeat;
+    background: url("../images/Hoyrestilt_cropped.jpg") center / contain no-repeat;
     content: "";
     display: block;
     width: 100%;
@@ -592,6 +637,7 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 }
 
 .contact-page .contact-card {
+  background-color: var(--color-highlight);
   justify-self: center;
   padding: 1rem;
   width: min(100%, 350px);
@@ -718,9 +764,18 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 }
 
 .about-hero .about-text-copy {
-  background-color: rgba(23, 21, 43, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+@media (min-width: 1280px) {
+  .about-hero .about-text-copy {
+    background-color: rgba(23, 21, 43, 0.74);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
 }
 
 .about-hero .about-text-copy h2,
@@ -730,14 +785,17 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 }
 
 .about-hero .about-text-copy > p:last-child {
-  border-top: 1px solid rgba(255, 255, 255, 0.32);
+  background-color: rgba(240, 237, 255, 0.12);
+  border: 0;
+  border-left: 3px solid var(--color-highlight);
+  border-radius: var(--radius);
   color: #fff;
-  font-size: clamp(1.05rem, 1.12em, 1.18rem);
+  font-size: 1.25rem;
   font-weight: 700;
-  line-height: 1.3;
-  margin-top: 0.65rem;
-  padding-top: 0.75rem;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+  line-height: 1.25;
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  text-shadow: none;
 }
 
 .about-video-column {
@@ -781,12 +839,14 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
   width: 100%;
 }
 
-.about-highlights {
+.about-page .about-highlights {
+  background-color: var(--color-highlight);
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  padding-bottom: 3.5rem;
-  padding-top: 0;
+  margin: 0;
+  max-width: none;
+  padding: 2.5rem max(1.5rem, calc((100vw - var(--max-width)) / 2 + 1.5rem)) 3.5rem;
 }
 
 .about-highlights article {
@@ -890,6 +950,10 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
+}
+
+.student-list-page .student-grid .card {
+  background-color: var(--color-highlight);
 }
 
 @media (min-width: 900px) {
@@ -998,6 +1062,78 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
   margin-bottom: 0.25rem;
 }
 
+.home-values-section {
+  align-items: start;
+  background-color: var(--color-highlight);
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  margin: 0;
+  max-width: none;
+  padding: 4.5rem max(1.5rem, calc((100vw - var(--max-width)) / 2 + 1.5rem)) 3rem;
+}
+
+.home-values-section > h2 {
+  grid-column: 1;
+  margin: 0;
+}
+
+.home-values-section > p {
+  align-self: center;
+  border-left: 2px solid var(--color-accent);
+  color: var(--color-muted);
+  grid-column: 2;
+  margin: 0;
+  max-width: 46rem;
+  padding-left: 1rem;
+}
+
+.home-values-section .value-list {
+  gap: 1.25rem;
+  grid-column: 1 / -1;
+  margin-top: 0.5rem;
+}
+
+.home-values-section .value-list li {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  border-top: 3px solid var(--color-accent);
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.home-values-section .value-list li:hover {
+  box-shadow: 0 12px 28px rgba(23, 21, 43, 0.14);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 767px) {
+  .home-values-section {
+    gap: 0.85rem;
+    grid-template-columns: minmax(0, 1fr);
+    padding-bottom: 2.5rem;
+    padding-top: 5rem;
+  }
+
+  .home-values-section > h2,
+  .home-values-section > p,
+  .home-values-section .value-list {
+    grid-column: 1;
+  }
+
+  .home-values-section > p {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .home-values-section .value-list {
+    gap: 0.85rem;
+    margin-top: 0.5rem;
+  }
+}
+
 /* ---------- Praksisprosjekter ---------- */
 
 .practice-section {
@@ -1076,7 +1212,7 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
     grid-column: 1;
   }
 
-  .about-highlights {
+  .about-page .about-highlights {
     gap: 1.5rem;
     grid-template-columns: 1fr;
     padding-bottom: 2.5rem;
@@ -1124,7 +1260,7 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 .profile {
   margin: 0 auto;
   max-width: 980px;
-  background-color: var(--color-surface);
+  background-color: var(--color-highlight);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -1502,18 +1638,18 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 }
 
 .solution-grid figure:nth-child(4) {
-  grid-column: 7 / span 6;
+  grid-column: 1 / span 6;
   grid-row: 3 / span 2;
 }
 
 .solution-grid figure:nth-child(5) {
-  grid-column: 1 / span 6;
-  grid-row: 4;
+  grid-column: 7 / span 6;
+  grid-row: 3;
 }
 
 .solution-grid figure:nth-child(6) {
-  grid-column: 1 / span 6;
-  grid-row: 3;
+  grid-column: 7 / span 6;
+  grid-row: 4;
 }
 
 .project-news-section {
@@ -1660,6 +1796,99 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
   margin-top: 0;
 }
 
+@media (min-width: 768px) and (max-width: 1099px) {
+  body:not(.project-page) .nav-menu[data-collapsed="true"] {
+    position: relative;
+  }
+
+  body:not(.project-page) .nav-menu[data-collapsed="true"] > summary {
+    background-color: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: var(--radius);
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    min-height: 2.75rem;
+    min-width: 3.5rem;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+  }
+
+  body:not(.project-page) .nav-menu[data-collapsed="true"] > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  body:not(.project-page) .nav-menu[data-collapsed="true"] > summary::after {
+    content: " +";
+  }
+
+  body:not(.project-page) .nav-menu[data-collapsed="true"][open] > summary::after {
+    content: " -";
+  }
+
+  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul {
+    background-color: var(--color-primary-dark);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 13rem;
+    padding: 0.5rem;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.5rem);
+  }
+
+  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"][open] > ul {
+    display: flex;
+  }
+
+  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul > li,
+  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul > li > details,
+  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul > li > a,
+  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul > li > details > summary {
+    width: 100%;
+  }
+
+  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul > li > a,
+  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul > li > details > summary {
+    display: block;
+    text-align: left;
+  }
+
+  body:not(.project-page) .main-nav .student-menu-list {
+    left: auto;
+    margin-top: 0.25rem;
+    position: static;
+    width: 100%;
+  }
+
+  .student-page .site-header .nav-menu[data-collapsed="true"] > summary {
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+    color: var(--color-primary-dark);
+  }
+
+  .student-page .site-header .main-nav > .nav-menu[data-collapsed="true"] > ul {
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+  }
+
+  .student-page .site-header .main-nav > .nav-menu[data-collapsed="true"] > ul > li > a,
+  .student-page .site-header .main-nav > .nav-menu[data-collapsed="true"] > ul > li > details > summary {
+    color: var(--color-primary-dark);
+  }
+
+  .student-page .site-header .main-nav > .nav-menu[data-collapsed="true"] > ul > li > a:hover,
+  .student-page .site-header .main-nav > .nav-menu[data-collapsed="true"] > ul > li > details > summary:hover {
+    background-color: var(--color-highlight);
+  }
+}
+
 @media (max-width: 767px) {
   .fixed-logo {
     --logo-width: clamp(110px, 42vw, 170px);
@@ -1779,14 +2008,14 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 
   .hero:not(.contact-hero)::before {
     aspect-ratio: 3 / 2;
-    background: url("../images/%C3%85pen%20venstre.jpg") center / contain no-repeat;
+    background: url("../images/Hoyrestilt_cropped.jpg") center / contain no-repeat;
     content: "";
     display: block;
     width: 100%;
   }
 
   .about-page .hero::before {
-    background-image: url("../images/%C3%85pen%20venstre.jpg");
+    background-image: url("../images/Hoyrestilt_cropped.jpg");
   }
 
   .about-hero .container {
@@ -1804,6 +2033,7 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
   .hero.home-hero {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
+    min-height: max(100svh, 46rem);
     padding-top: 0;
     padding-bottom: 2rem;
   }
@@ -1811,7 +2041,7 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
   .hero.home-hero::before {
     background-image:
       linear-gradient(180deg, rgba(23, 21, 43, 0.02) 15%, rgba(23, 21, 43, 0.78) 100%),
-      url("../images/%C3%85pen%20venstre.jpg");
+      url("../images/Hoyrestilt_cropped.jpg");
     background-position: center, center top;
     background-repeat: no-repeat, no-repeat;
     background-size: 100% 100%, contain;
@@ -1847,6 +2077,10 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
   .home-hero .hero-copy p {
     font-size: 1rem;
     margin-bottom: 0.75rem;
+  }
+
+  .home-video-placeholder {
+    width: 70%;
   }
 
   .home-hero .btn {

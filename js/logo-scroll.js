@@ -1,10 +1,20 @@
 const navMenu = document.querySelector(".nav-menu");
 
 if (navMenu) {
-  const mobileNavQuery = window.matchMedia("(max-width: 767px)");
+  const body = document.body;
+  const navBreakpoint = body.classList.contains("project-page")
+    ? 767
+    : body.classList.contains("contact-page")
+      ? 1099
+      : body.classList.contains("student-page")
+        ? 899
+        : 1049;
+  const mobileNavQuery = window.matchMedia(`(max-width: ${navBreakpoint}px)`);
 
   function updateNavMenu() {
-    navMenu.open = !mobileNavQuery.matches;
+    const isCollapsed = mobileNavQuery.matches;
+    navMenu.dataset.collapsed = isCollapsed;
+    navMenu.open = !isCollapsed;
   }
 
   mobileNavQuery.addEventListener("change", updateNavMenu);
