@@ -47,6 +47,19 @@ a:focus {
   text-decoration: underline;
 }
 
+body:not(.project-page) a:focus-visible,
+body:not(.project-page) .nav-menu > summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+body:not(.project-page) .main-nav a,
+body:not(.project-page) .nav-menu > summary,
+body:not(.project-page) .student-menu summary,
+body:not(.project-page) .student-page-nav a {
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -95,7 +108,7 @@ img {
 
 .student-page .fixed-logo {
   --logo-width: clamp(110px, 18vw, 170px);
-  z-index: 5;
+  z-index: 31;
 }
 
 .fixed-logo img {
@@ -125,13 +138,17 @@ img {
   text-decoration: none;
 }
 
-.main-nav ul {
+.main-nav > .nav-menu > ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
   margin: 0;
   padding: 0;
+}
+
+.nav-menu > summary {
+  display: none;
 }
 
 .main-nav a {
@@ -264,8 +281,10 @@ img {
 }
 
 .student-page-nav a {
+  background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(23, 21, 43, 0.12);
   color: var(--color-primary-dark);
   display: inline-block;
   font-weight: 600;
@@ -288,7 +307,11 @@ img {
 
 .hero {
   align-items: stretch;
-  background: url("../images/Zoomed%20ut.jpg") center / cover;
+  background-color: var(--color-primary-dark);
+  background-image: url("../images/Zoomed%20ut.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   border-bottom: 1px solid var(--color-border);
   color: #fff;
   display: flex;
@@ -318,7 +341,7 @@ img {
   padding: 0.65rem 0.9rem;
 }
 
-.contact-page .main-nav ul {
+.contact-page .main-nav > .nav-menu > ul {
   gap: 1.75rem;
 }
 
@@ -364,8 +387,128 @@ img {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
+  row-gap: 0.75rem;
   justify-content: flex-end;
   width: 100%;
+}
+
+.home-hero {
+  background-image: url("../images/%C3%85pen%20venstre.jpg");
+  background-size: cover;
+}
+
+.home-hero .container {
+  justify-content: center;
+  transform: translateY(-2rem);
+}
+
+@media (min-aspect-ratio: 5 / 3) and (min-width: 768px) {
+  .home-hero {
+    background-size: contain;
+  }
+}
+
+body:not(.project-page):not(.student-page) .site-header .main-nav {
+  background-color: rgba(23, 21, 43, 0.9);
+  border-radius: var(--radius);
+  padding: 0.25rem;
+}
+
+.student-page .site-header .main-nav {
+  background-color: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.25rem;
+}
+
+.student-list-page main > .section:first-child {
+  padding-top: 10rem;
+}
+
+.student-list-page {
+  background: url("../images/Trees.png") center / cover no-repeat fixed;
+}
+
+.student-list-page main > .section > h2,
+.student-list-page main > .section > p {
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(23, 21, 43, 0.8);
+}
+
+.about-page > .hero {
+  background-image: url("../images/%C3%85pen%20venstre.jpg");
+  background-position: center top;
+  background-size: contain;
+  padding: 7rem 0 1.5rem;
+}
+
+.about-hero .container {
+  justify-content: center;
+}
+
+@media (min-width: 1280px) {
+  .about-hero .container {
+    transform: translateY(1.5rem);
+  }
+}
+
+.about-hero .cta-row {
+  margin-top: 0;
+}
+
+.about-hero .scroll-indicator {
+  margin-top: 0;
+}
+
+@media (min-width: 1280px) {
+  .about-hero .about-text-copy {
+    width: clamp(21rem, 27vw, 24rem);
+    padding: 0.8rem;
+    font-size: clamp(0.88rem, 1.1vw, 0.92rem);
+    line-height: 1.35;
+  }
+
+  .about-hero .about-text-copy h2 {
+    font-size: clamp(1.65rem, 2vw, 1.8rem);
+  }
+
+  .about-hero .about-text-copy > p:first-of-type {
+    font-size: clamp(0.95rem, 1.1vw, 1rem);
+    line-height: 1.2;
+    margin-bottom: 0.55rem;
+  }
+
+  .about-hero .about-text-copy > p:not(:first-of-type) {
+    margin-bottom: 0.55rem;
+  }
+}
+
+@media (max-width: 1279px) {
+  .about-hero .about-text-copy {
+    max-width: none;
+    width: 100%;
+  }
+
+  .about-page > .hero {
+    background-image: none;
+    display: block;
+    min-height: auto;
+    padding: 0 0 2rem;
+  }
+
+  .about-page > .hero::before {
+    aspect-ratio: 3 / 2;
+    background: url("../images/%C3%85pen%20venstre.jpg") center / contain no-repeat;
+    content: "";
+    display: block;
+    width: 100%;
+  }
+
+  .about-hero .container {
+    justify-content: flex-start;
+    padding-top: 1.5rem;
+    transform: none;
+  }
 }
 
 .hero-copy {
@@ -395,9 +538,10 @@ img {
 }
 
 .contact-page {
-  background: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url("../images/Trees.png") center center / cover no-repeat fixed;
-  height: 100svh;
-  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)), url("../images/Trees.png") center center / cover no-repeat fixed;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow-x: hidden;
 }
 
 .contact-page > * {
@@ -547,22 +691,65 @@ img {
 
 .about-text-copy {
   grid-column: 1;
+  color: #fff;
+  max-width: min(100%, 24rem);
+  padding: 1rem;
+  text-shadow: 0 2px 12px rgba(23, 21, 43, 0.9);
+}
+
+.about-text-copy h2 {
+  color: #fff;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.55rem, 2.5vw, 2.2rem);
+  line-height: 1.15;
+  margin: 0 0 0.7rem;
 }
 
 .about-text-copy > p {
-  color: var(--color-muted);
+  color: #fff;
   margin: 0 0 0.85rem;
 }
 
 .about-text-copy > p:first-of-type {
-  color: var(--color-primary-dark);
+  color: #fff;
   font-family: "Fraunces", Georgia, serif;
   font-size: 1.2rem;
   line-height: 1.3;
 }
 
+.about-hero .about-text-copy {
+  background-color: rgba(23, 21, 43, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+.about-hero .about-text-copy h2,
+.about-hero .about-text-copy > p {
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+}
+
+.about-hero .about-text-copy > p:last-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.32);
+  color: #fff;
+  font-size: clamp(1.05rem, 1.12em, 1.18rem);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 0.65rem;
+  padding-top: 0.75rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+}
+
 .about-video-column {
-  grid-column: 2;
+  grid-column: 1;
+  margin: 0 auto;
+  max-width: 52rem;
+  width: 100%;
+}
+
+.about-video-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .about-kicker {
@@ -870,6 +1057,12 @@ img {
   margin-top: auto;
 }
 
+@media (min-width: 768px) and (max-width: 1080px) {
+  .practice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 767px) {
   .about-media-section {
     gap: 1.25rem;
@@ -913,13 +1106,15 @@ img {
 /* ---------- Studentprofilside ---------- */
 
 .student-page {
-  height: 100svh;
-  overflow: hidden;
+  background: url("../images/Trees.png") center / cover no-repeat;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow-x: hidden;
 }
 
 .student-page main {
-  height: calc(100svh - 4.25rem);
-  overflow: hidden;
+  min-height: calc(100vh - 4.25rem);
+  min-height: calc(100svh - 4.25rem);
 }
 
 .student-page main > .section:first-of-type {
@@ -937,6 +1132,10 @@ img {
   display: grid;
   grid-template-columns: 180px 1fr;
   gap: 2.25rem;
+}
+
+.profile > div {
+  min-width: 0;
 }
 
 .profile .avatar {
@@ -1015,7 +1214,9 @@ img {
 
 .profile-links{
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
+  min-width: 0;
   margin-top: 0.75rem;
 }
 
@@ -1060,6 +1261,7 @@ img {
   color: var(--color-muted);
   font-weight: 500;
   margin-left: 4px;
+  overflow-wrap: anywhere;
 }
 
 .mail-text:hover,
@@ -1471,15 +1673,188 @@ img {
     padding-bottom: 0.85rem;
   }
 
-  .main-nav ul {
-    gap: 0.75rem;
+  .nav-menu {
+    position: relative;
   }
 
-  .hero {
-    min-height: 100vh;
-    min-height: 100svh;
+  .nav-menu > summary {
+    background-color: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: var(--radius);
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    min-height: 2.75rem;
+    min-width: 3.5rem;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+  }
+
+  .nav-menu > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .nav-menu > summary::after {
+    content: " +";
+  }
+
+  .nav-menu[open] > summary::after {
+    content: " -";
+  }
+
+  .main-nav > .nav-menu > ul {
+    background-color: var(--color-primary-dark);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 13rem;
+    padding: 0.5rem;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.5rem);
+  }
+
+  .main-nav > .nav-menu[open] > ul {
+    display: flex;
+  }
+
+  .main-nav > .nav-menu > ul > li,
+  .main-nav > .nav-menu > ul > li > details,
+  .main-nav > .nav-menu > ul > li > a,
+  .main-nav > .nav-menu > ul > li > details > summary {
+    width: 100%;
+  }
+
+  .main-nav > .nav-menu > ul > li > a,
+  .main-nav > .nav-menu > ul > li > details > summary {
+    display: block;
+    text-align: left;
+  }
+
+  .main-nav .student-menu-list {
+    left: auto;
+    margin-top: 0.25rem;
+    position: static;
+    width: 100%;
+  }
+
+  .student-page .nav-menu > summary {
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+    color: var(--color-primary-dark);
+  }
+
+  .student-list-page main > .section:first-child {
     padding-top: 7rem;
+  }
+
+  .student-page .main-nav > .nav-menu > ul {
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+  }
+
+  .student-page .main-nav > .nav-menu > ul > li > a,
+  .student-page .main-nav > .nav-menu > ul > li > details > summary {
+    color: var(--color-primary-dark);
+  }
+
+  .student-page .main-nav > .nav-menu > ul > li > a:hover,
+  .student-page .main-nav > .nav-menu > ul > li > details > summary:hover {
+    background-color: var(--color-highlight);
+  }
+
+  .hero:not(.contact-hero) {
+    background-color: var(--color-primary-dark);
+    background-image: none;
+    display: block;
+    min-height: auto;
+    padding-top: 6.5rem;
     padding-bottom: 3rem;
+  }
+
+  .hero:not(.contact-hero)::before {
+    aspect-ratio: 3 / 2;
+    background: url("../images/%C3%85pen%20venstre.jpg") center / contain no-repeat;
+    content: "";
+    display: block;
+    width: 100%;
+  }
+
+  .about-page .hero::before {
+    background-image: url("../images/%C3%85pen%20venstre.jpg");
+  }
+
+  .about-hero .container {
+    transform: none;
+  }
+
+  .about-page > .hero {
+    padding-top: 0;
+  }
+
+  .hero:not(.contact-hero) .container {
+    padding-top: 1.5rem;
+  }
+
+  .hero.home-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
+
+  .hero.home-hero::before {
+    background-image:
+      linear-gradient(180deg, rgba(23, 21, 43, 0.02) 15%, rgba(23, 21, 43, 0.78) 100%),
+      url("../images/%C3%85pen%20venstre.jpg");
+    background-position: center, center top;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100% 100%, contain;
+    grid-area: 1 / 1;
+  }
+
+  .hero.home-hero .container {
+    align-self: stretch;
+    aspect-ratio: 3 / 2;
+    display: flex;
+    grid-area: 1 / 1;
+    justify-content: flex-start;
+    min-height: max(calc(100vw * 2 / 3), 19rem);
+    padding-bottom: 1rem;
+    padding-top: 5rem;
+    position: relative;
+    transform: none;
+    z-index: 1;
+  }
+
+  .home-hero .hero-copy {
+    max-width: 32rem;
+    width: 100%;
+  }
+
+  .home-hero .hero-copy h1 {
+    font-size: clamp(1.75rem, 8vw, 2.4rem);
+    line-height: 1.05;
+    margin-bottom: 0.5rem;
+    max-width: 12ch;
+  }
+
+  .home-hero .hero-copy p {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .home-hero .btn {
+    align-self: flex-start;
+  }
+
+  .home-hero .scroll-indicator {
+    margin-top: 0.75rem;
   }
 
   .contact-page .contact-hero {
@@ -1503,6 +1878,28 @@ img {
   .contact-page .contact-grid {
     gap: 0.5rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 360px) {
+  .home-hero .hero-copy {
+    padding: 0.55rem;
+  }
+
+  .home-hero .hero-copy h1 {
+    font-size: 1.55rem;
+    line-height: 1.02;
+    margin-bottom: 0.35rem;
+  }
+
+  .home-hero .hero-copy p {
+    font-size: 0.92rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .home-hero .scroll-indicator {
+    display: none;
   }
 }
 

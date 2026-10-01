@@ -1,3 +1,16 @@
+const navMenu = document.querySelector(".nav-menu");
+
+if (navMenu) {
+  const mobileNavQuery = window.matchMedia("(max-width: 767px)");
+
+  function updateNavMenu() {
+    navMenu.open = !mobileNavQuery.matches;
+  }
+
+  mobileNavQuery.addEventListener("change", updateNavMenu);
+  updateNavMenu();
+}
+
 const logoLink = document.querySelector(".fixed-logo");
 
 if (logoLink) {
@@ -19,8 +32,9 @@ if (logoLink) {
       logo.src = showingSmallLogo ? logo.dataset.smallLogo : logo.dataset.largeLogo;
     }
 
+    const hasPersistentImageBackground = document.body.classList.contains("student-list-page") || document.body.classList.contains("student-page");
     const isProjectPage = document.body.classList.contains("project-page");
-    const shouldUseLightLogo = isProjectPage || Boolean(hero && window.scrollY < hero.offsetHeight);
+    const shouldUseLightLogo = isProjectPage || hasPersistentImageBackground || Boolean(hero && window.scrollY < hero.offsetHeight);
 
     logoLink.classList.toggle("logo-over-image", shouldUseLightLogo);
     frameRequested = false;
