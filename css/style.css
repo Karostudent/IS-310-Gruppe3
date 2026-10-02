@@ -1413,6 +1413,34 @@ body .site-header .main-nav {
   padding: 0.7rem 1.5rem 0;
 }
 
+.student-page main > nav[aria-label="Naviger mellom studenter"] a {
+  align-items: center;
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius);
+  box-shadow: 0 3px 10px rgba(23, 21, 43, 0.2);
+  color: var(--color-primary-dark);
+  display: inline-flex;
+  font-size: 1.05rem;
+  font-weight: 700;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.85rem;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.student-page main > nav[aria-label="Naviger mellom studenter"] a:hover,
+.student-page main > nav[aria-label="Naviger mellom studenter"] a:focus-visible {
+  background-color: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.student-page main > nav[aria-label="Naviger mellom studenter"] {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .profile {
   margin: 0 auto;
   max-width: 980px;
@@ -2216,32 +2244,27 @@ body .site-header .main-nav {
   }
 
   .hero.home-hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    min-height: max(100svh, 46rem);
+    display: block;
+    min-height: auto;
     padding-top: 0;
     padding-bottom: 2rem;
   }
 
   .hero.home-hero::before {
-    background-image:
-      linear-gradient(180deg, rgba(23, 21, 43, 0.02) 15%, rgba(23, 21, 43, 0.78) 100%),
-      url("../images/Hoyrestilt_cropped.jpg");
-    background-position: center, center top;
-    background-repeat: no-repeat, no-repeat;
-    background-size: 100% 100%, contain;
-    grid-area: 1 / 1;
+    background-image: url("../images/Hoyrestilt_cropped.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
   .hero.home-hero .container {
-    align-self: stretch;
-    aspect-ratio: 3 / 2;
+    align-self: auto;
+    aspect-ratio: auto;
     display: flex;
-    grid-area: 1 / 1;
     justify-content: flex-start;
-    min-height: max(calc(100vw * 2 / 3), 19rem);
-    padding-bottom: 1rem;
-    padding-top: 4.25rem;
+    min-height: 0;
+    padding-bottom: 0;
+    padding-top: 1.5rem;
     position: relative;
     transform: none;
     z-index: 1;
@@ -2249,8 +2272,8 @@ body .site-header .main-nav {
 
   .home-hero .hero-copy {
     max-width: 32rem;
-    margin-bottom: -0.125rem;
-    transform: translateY(-0.125rem);
+    margin-bottom: 0.5rem;
+    transform: none;
     width: 100%;
   }
 
