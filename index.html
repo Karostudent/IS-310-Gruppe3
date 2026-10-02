@@ -7,29 +7,20 @@
   <meta name="description" content="Nettside for prosjektgruppe 3 i faget IS-310 Prosjektgjennomføring. Møt studentene og les om gruppa vår." />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="home-page">
   <header class="site-header">
     <div class="container">
       <nav class="main-nav" aria-label="Hovednavigasjon">
-        <ul>
+        <details class="nav-menu" open>
+          <summary>Meny</summary>
+          <ul>
           <li><a href="index.html" class="active" aria-current="page">Forside</a></li>
-          <li><a href="om-oss.html">Om oss</a></li>
+          <li><a href="om-oss.html">Gruppen</a></li>
+          <li><a href="møt-studentene.html">Møt studentene</a></li>
           <li><a href="prosjekt.html">Prosjekt</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
-          <li class="student-menu">
-            <details>
-              <summary>Studentene</summary>
-              <ul class="student-menu-list">
-                <li><a href="studenter/student1.html">Emma</a></li>
-                <li><a href="studenter/student2.html">Milana</a></li>
-                <li><a href="studenter/student3.html">Helle</a></li>
-                <li><a href="studenter/student4.html">Halvard</a></li>
-                <li><a href="studenter/student5.html">Karoline</a></li>
-                <li><a href="studenter/student6.html">Henos</a></li>
-              </ul>
-            </details>
-          </li>
-        </ul>
+          </ul>
+        </details>
       </nav>
     </div>
   </header>
@@ -39,144 +30,38 @@
   </a>
 
   <main>
-    <section class="hero">
+    <section class="hero home-hero">
       <div class="container">
         <div class="hero-copy">
-          <h1><span>Sammen</span> ser vi hele bildet.</h1>
+          <h1><span>Sammen om </span>å se det store bildet.</h1>
           <p>Seks ulike perspektiver. Ett felles mål.</p>
         </div>
-        <a class="btn" href="om-oss.html">Les mer om oss</a>
-        <div class="scroll-indicator">
-          <a href="#studentene" aria-label="Gå ned til studentene">↓</a>
-        </div>
+
+      <div class="home-video-placeholder">
+          <video class="about-video" controls preload="metadata" playsinline>
+          <source src="images/Midlertidig%20intor%20video.mp4" type="video/mp4" />
+          Nettleseren din støtter ikke videoavspilling.
+        </video>
+      </div>     
+        
+        <a class="btn home-values-cta" href="#home-values-section">
+          Hvorfor velge oss?
+          <span class="home-values-cta-icon" aria-hidden="true">&darr;</span>
+        </a>
+      
+        
       </div>
     </section>
 
-    <section id="studentene" class="section container">
-      <h2>Møt studentene</h2>
-      <p>
-        Klikk deg inn på hver enkelt student for å lese en kort presentasjon  
-        og finne lenker til LinkedIn og GitHub for hver enkelt.
-      </p>
-
-      <div class="student-grid">
-        <article class="card">
-          <div class="avatar"><img src="images/EmmaV.png" alt="Portrett av Emma Wolden" /></div>
-          <h3>Emma Wolden</h3>
-          <p class="role">Student / 3. år IT og informasjonssystemer</p>
-          <a href="studenter/student1.html" aria-label="Se presentasjon for Emma Wolden">Se presentasjon &rarr;</a>
-        </article>
-
-        <article class="card">
-          <div class="avatar"><img src="images/Milana.jpg" alt="Portrett av Milana Dubkova" /></div>
-          <h3>Milana Dubkova</h3>
-          <p class="role">Student / 3. år IT og informasjonssystemer</p>
-          <a href="studenter/student2.html" aria-label="Se presentasjon for Milana Dubkova">Se presentasjon &rarr;</a>
-        </article>
-
-        <article class="card">
-          <div class="avatar">
-            <img src="images/Helle.jpg" alt="Portrett av Helle Øvstedal Aanonsen" />
-          </div>
-          <h3>Helle Ø. Aanonsen</h3>
-          <p class="role">Student / 3. år IT og informasjonssystemer</p>
-          <a href="studenter/student3.html" aria-label="Se presentasjon for Helle Øvstedal Aanonsen">Se presentasjon &rarr;</a>
-        </article>
-
-        <article class="card">
-          <div class="avatar"><img src="images/HalvardAIBildeSkalByttes.png" alt="Portrett av Halvard Jansen" /></div>
-          <h3>Halvard Jansen</h3>
-            <p class="role">Student / 3. år IT og informasjonssystemer</p>
-          <a href="studenter/student4.html" aria-label="Se presentasjon for Halvard Jansen">Se presentasjon &rarr;</a>
-        </article>
-
-        <article class="card">
-          <div class="avatar">
-            <img src="images/Karoline.jpg" alt="Portrett av Karoline Aas-Mehren" />
-          </div>
-          <h3>Karoline Aas-Mehren</h3>
-          <p class="role">Student / 3. år IT og informasjonssystemer</p>
-          <a href="studenter/student5.html" aria-label="Se presentasjon for Karoline Aas-Mehren">Se presentasjon &rarr;</a>
-        </article>
-
-        <article class="card">
-          <div class="avatar"><img src="images/Henoshw.jpg" alt="Portrett av Henos Habtab Weldegiorgis" /></div>
-          <h3>Henos Habtab Weldegiorgis</h3>
-          <p class="role">Student / 3. år IT og informasjonssystemer</p>
-          <a href="studenter/student6.html" aria-label="Se presentasjon for Henos Habtab Weldegiorgis">Se presentasjon &rarr;</a>
-        </article>
+  <section id="home-values-section" class="section container home-values-section">
+      <div class="home-values-intro">
+        <h2>Hvorfor velge oss?</h2>
+        <p>
+          Fordi gode løsninger sjelden kommer fra bare én måte å se problemet på.
+          Vi kombinerer ulike erfaringer, faglig nysgjerrighet og strukturert arbeid
+          for å forstå utfordringen før vi begynner å bygge løsningen.
+        </p>
       </div>
-    </section>
-
-    <section class="section container practice-section">
-      <h2>Våre praksisprosjekter</h2>
-      <p>
-        Dette semesteret tar vi med erfaringene våre fra skolebenken ut i
-        arbeidslivet for å hjelpe bedrifter med å finne bedre løsninger på
-        utfordringene sine.
-      </p>
-
-      <div class="practice-grid">
-        <article class="practice-card">
-          <div class="practice-logo">
-            <img src="images/Logo/KRS Kommune Logo.png" alt="Kristiansand kommune-logo" />
-          </div>
-          <h3>Kristiansand kommune</h3>
-          <p>
-            Karoline forenkler kommunens behandling av ALIS-søknader og utvikler
-            en prototype på en digital søknadsportal.
-          </p>
-          <a class="btn" href="https://praksis-i-kristiansand-kommune-f6avada4atbnemcf.germanywestcentral-01.azurewebsites.net/prosjekt" target="_blank" rel="noopener noreferrer">Se prosjektet</a>
-        </article>
-
-        <article class="practice-card">
-          <div class="practice-logo">
-            <img src="images/Logo/Uia Logo.png" alt="Uia Hjelp-logo" />
-          </div>
-          <h3>Uia Hjelp</h3>
-          <p>
-            Henos videreutvikler en chatbot for UiA som skal gjøre det enklere
-            for studenter og ansatte å finne relevant informasjon på UiAs
-            nettsider.
-          </p>
-          <a class="btn" href="https://praksis-uiahtml.vercel.app/" target="_blank" rel="noopener noreferrer">Se prosjektet</a>
-        </article>
-
-        <article class="practice-card">
-          <div class="practice-logo">
-            <img src="images/Logo/Spring Marketing logo.png" alt="Spring Marketing-logo" />
-          </div>
-          <h3>Spring Marketing</h3>
-          <p>
-            Halvard utvikler PlukkeFun, en løsning som skal gjøre ordreplukking
-            hos Elefun enklere og gi lageransatte bedre oversikt over arbeidsflyt
-            og avvik.
-          </p>
-          <a class="btn" href="https://haldvar.github.io/index.html" target="_blank" rel="noopener noreferrer">Se prosjektet</a>
-        </article>
-
-        <article class="practice-card">
-          <div class="practice-logo">
-            <img src="images/Logo/logodigi.png" alt="Digi Agder-logo" />
-          </div>
-          <h3>Digi Agder</h3>
-          <p>
-            Helle videreutvikler et KI-kart over KI-prosjekter i offentlig
-            sektor i Agder, og bidrar i arbeidet med KI og organisasjonsutvikling
-            i kommunene.
-          </p>
-          <a class="btn" href="https://sites.google.com/view/digi-agder-praksis-2026/prosjektoppgave" target="_blank" rel="noopener noreferrer">Se prosjektet</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container">
-      <h2>Hvorfor velge oss?</h2>
-      <p>
-        Fordi gode løsninger sjelden kommer fra bare én måte å se problemet på.
-        Vi kombinerer ulike erfaringer, faglig nysgjerrighet og strukturert arbeid
-        for å forstå utfordringen før vi begynner å bygge løsningen.
-      </p>
 
       <ul class="value-list">
         <li>
@@ -196,6 +81,9 @@
         </li>
       </ul>
     </section>
+
+   
+    
 
 
   <footer class="site-footer">

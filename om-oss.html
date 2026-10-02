@@ -11,25 +11,16 @@
   <header class="site-header">
     <div class="container">
       <nav class="main-nav" aria-label="Hovednavigasjon">
-        <ul>
+        <details class="nav-menu" open>
+          <summary>Meny</summary>
+         <ul>
           <li><a href="index.html">Forside</a></li>
-          <li><a href="om-oss.html" class="active">Om oss</a></li>
+          <li><a href="om-oss.html" class="active" aria-current="page">Gruppen</a></li>
+          <li><a href="møt-studentene.html">Møt studentene</a></li>
           <li><a href="prosjekt.html">Prosjekt</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
-          <li class="student-menu">
-            <details>
-              <summary>Studentene</summary>
-              <ul class="student-menu-list">
-                <li><a href="studenter/student1.html">Emma</a></li>
-                <li><a href="studenter/student2.html">Milana</a></li>
-                <li><a href="studenter/student3.html">Helle</a></li>
-                <li><a href="studenter/student4.html">Halvard</a></li>
-                <li><a href="studenter/student5.html">Karoline</a></li>
-                <li><a href="studenter/student6.html">Henos</a></li>
-              </ul>
-            </details>
-          </li>
-        </ul>
+          </ul>
+        </details>
       </nav>
     </div>
   </header>
@@ -39,10 +30,31 @@
   </a>
 
   <main class="about-page">
-    <section class="hero">
+    <section class="hero about-hero">
       <div class="container">
-        <h1>Perspektiv</h1>
-        <p>Seks studenter. Seks ulike perspektiver – ett felles mål.</p>
+       
+        <div class="about-text-copy">
+          <h2>Møt Perspektiv</h2>
+          <p>Ulike veier, ett felles mål.</p>
+          <p>
+            Det som kjennetegner gruppen vår, er ikke at vi tenker likt, men at vi
+            bringer med oss ulike perspektiver, erfaringer og kompetanser inn mot
+            samme bachelorgrad.
+          </p>
+          <p>
+            Vi har erfaring fra offentlig og privat sektor, frivillighet og
+            tillitsverv, og bakgrunner fra blant annet IT-service, arkiv,
+            sjømannskap, kokkeyrket, politikk, logistikk, medier og musikkliv.
+            Noen har lang arbeidserfaring, andre kommer med ferske perspektiver
+            og nye måter å angripe problemer på.
+          </p>
+          <p>
+            Det gir oss ulike blikk på den samme utfordringen. Vi utfordrer
+            hverandres antakelser, ser både detaljene og helheten og finner
+            løsninger sammen.
+          </p>
+          <p><strong>Det er der navnet vårt kommer fra: Perspektiv.</strong></p>
+        </div>
         <div class="cta-row">
           <a class="btn" href="kontakt.html">Ta kontakt</a>
         </div>
@@ -52,41 +64,7 @@
       </div>
     </section>
 
-    <section id="om-oss-start" class="section container about-media-section" aria-labelledby="about-video-title">
-      <div class="about-text-copy">
-        <h2>Møt Perspektiv</h2>
-        <p>Ulike veier, ett felles mål.</p>
-        <p>
-          Det som kjennetegner gruppen vår, er ikke at vi tenker likt, men at vi
-          bringer med oss ulike perspektiver, erfaringer og kompetanser inn mot
-          samme bachelorgrad.
-        </p>
-        <p>
-          Vi har erfaring fra offentlig og privat sektor, frivillighet og
-          tillitsverv, og bakgrunner fra blant annet IT-service, arkiv,
-          sjømannskap, kokkeyrket, politikk, logistikk, medier og musikkliv.
-          Noen har lang arbeidserfaring, andre kommer med ferske perspektiver
-          og nye måter å angripe problemer på.
-        </p>
-        <p>
-          Det gir oss ulike blikk på den samme utfordringen. Vi utfordrer
-          hverandres antakelser, ser både detaljene og helheten og finner
-          løsninger sammen.
-        </p>
-        <p><strong>Det er der navnet vårt kommer fra: Perspektiv.</strong></p>
-      </div>
-      <div class="about-video-column">
-        <div class="about-video-copy">
-          <p class="about-kicker">Introvideo</p>
-          <h2 id="about-video-title">Slik jobber vi sammen</h2>
-        </div>
-        <video class="about-video" controls preload="metadata" playsinline>
-          <source src="images/Midlertidig%20intor%20video.mp4" type="video/mp4" />
-          Nettleseren din støtter ikke videoavspilling.
-        </video>
-      </div>
-    </section>
-
+   
     <section class="section container about-highlights" aria-label="Dette tar vi med oss">
       <article>
         <h3>Vi ser etter et reelt problem</h3>
