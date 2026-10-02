@@ -9,6 +9,8 @@
   --color-primary-dark: #17152b;
   --color-secondary: #291c5c;
   --color-accent: #09203f;
+  --color-overlay-surface: rgba(23, 21, 43, 0.74);
+  --logo-width: clamp(182px, 31.2vw, 364px);
   --color-hero-accent: #ffffff;
   --color-bg: #f8f7fb;
   --color-surface: #ffffff;
@@ -47,16 +49,16 @@ a:focus {
   text-decoration: underline;
 }
 
-body:not(.project-page) a:focus-visible,
-body:not(.project-page) .nav-menu > summary:focus-visible {
+body a:focus-visible,
+body .nav-menu > summary:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 3px;
 }
 
-body:not(.project-page) .main-nav a,
-body:not(.project-page) .nav-menu > summary,
-body:not(.project-page) .student-menu summary,
-body:not(.project-page) .student-page-nav a {
+body .main-nav a,
+body .nav-menu > summary,
+body .student-menu summary,
+body .student-page-nav a {
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
@@ -95,7 +97,6 @@ img {
 }
 
 .fixed-logo {
-  --logo-width: clamp(182px, 31.2vw, 364px);
   display: block;
   left: 1.5rem;
   position: fixed;
@@ -107,7 +108,6 @@ img {
 }
 
 .student-page .fixed-logo {
-  --logo-width: clamp(110px, 18vw, 170px);
   z-index: 31;
 }
 
@@ -216,13 +216,10 @@ img {
   color: #fff;
 }
 
-.student-page .main-nav a,
 .student-page .student-menu summary {
   color: var(--color-primary-dark);
 }
 
-.student-page .main-nav a:hover,
-.student-page .main-nav a:focus,
 .student-page .student-menu summary:hover,
 .student-page .student-menu summary:focus {
   background-color: var(--color-highlight);
@@ -275,7 +272,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
-  padding-top: 5.5rem;
+  padding-top: max(5.5rem, calc(var(--logo-width) * 0.32 + 1.5rem));
   position: relative;
   z-index: 1;
 }
@@ -334,17 +331,6 @@ img {
   z-index: 20;
 }
 
-.contact-page .main-nav a,
-.contact-page .student-menu summary {
-  color: #fff;
-  font-size: 1.25rem;
-  padding: 0.65rem 0.9rem;
-}
-
-.contact-page .main-nav > .nav-menu > ul {
-  gap: 1.75rem;
-}
-
 .contact-page .student-menu-list a {
   color: var(--color-text);
 }
@@ -352,14 +338,6 @@ img {
 .contact-page .student-menu-list a:hover,
 .contact-page .student-menu-list a:focus {
   color: var(--color-primary-dark);
-}
-
-.contact-page .main-nav a.active,
-.contact-page .main-nav a:hover,
-.contact-page .main-nav a:focus {
-  background-color: rgba(0, 0, 0, 0.28);
-  border-color: rgba(255, 255, 255, 0.65);
-  color: #fff;
 }
 
 .contact-page .fixed-logo img {
@@ -399,7 +377,21 @@ img {
 
 .home-hero .container {
   justify-content: center;
-  transform: translateY(0.5rem);
+  transform: translateY(-2.5rem);
+}
+
+.home-hero .hero-copy {
+  margin-bottom: -0.375rem;
+  transform: translateY(-0.5rem);
+}
+
+.home-hero .hero-copy h1 {
+  font-size: clamp(2.75rem, 5.6vw, 5.4rem);
+}
+
+.home-hero .hero-copy p {
+  font-size: clamp(1.15rem, 1.75vw, 1.5rem);
+  line-height: 1.35;
 }
 
 .home-video-placeholder {
@@ -419,9 +411,38 @@ img {
   width: 80%;
 }
 
+.home-hero .home-values-cta {
+  align-items: center;
+  background-color: var(--color-highlight);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  color: var(--color-primary-dark);
+  display: inline-flex;
+  gap: 0.75rem;
+  margin-top: 2.25rem;
+  padding: 0.85rem 1rem 0.85rem 1.25rem;
+}
+
+.home-values-cta-icon {
+  align-items: center;
+  background-color: var(--color-primary-dark);
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  height: 1.8rem;
+  justify-content: center;
+  line-height: 1;
+  transition: transform 0.15s ease;
+  width: 1.8rem;
+}
+
+.home-values-cta:hover .home-values-cta-icon,
+.home-values-cta:focus .home-values-cta-icon {
+  transform: translateY(2px);
+}
+
 @media (min-width: 768px) and (max-width: 1099px) {
   .home-hero .container {
-    transform: translateY(0.5rem);
+    transform: translateY(-2rem);
   }
 }
 
@@ -431,21 +452,26 @@ img {
   }
 }
 
-body:not(.project-page):not(.student-page) .site-header .main-nav {
+body .site-header .main-nav {
   background-color: rgba(23, 21, 43, 0.9);
   border-radius: var(--radius);
   padding: 0.25rem;
 }
 
-.student-page .site-header .main-nav {
-  background-color: rgba(255, 255, 255, 0.96);
-  border: 1px solid var(--color-border);
+.student-list-page .student-content-zone {
+  background-color: var(--color-overlay-surface);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius);
-  padding: 0.25rem;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10rem;
+  padding: 2rem 1.5rem 0;
+  width: calc(100% - 1.5rem);
 }
 
-.student-list-page main > .section:first-child {
-  padding-top: 10rem;
+.student-list-page .student-content-zone > .section:first-child {
+  padding-top: 0;
 }
 
 .student-list-back-to-top {
@@ -464,12 +490,12 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
   background: url("../images/Trees.png") center / cover no-repeat fixed;
 }
 
-.student-list-page main > .section > h2 {
+.student-list-page .student-content-zone > .section > h2 {
   color: #fff;
   text-shadow: 0 1px 4px rgba(23, 21, 43, 0.8);
 }
 
-.student-list-page main > .section > p {
+.student-list-page .student-content-zone > .section > p {
   color: #fff;
   text-shadow: 0 1px 4px rgba(23, 21, 43, 0.8);
 }
@@ -508,9 +534,10 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 
 @media (min-width: 1280px) {
   .about-hero .about-text-copy {
-    margin-inline: -1.5rem;
-    max-width: none;
-    width: calc(100% + 3rem);
+    align-self: center;
+    margin-inline: 0;
+    max-width: 74rem;
+    width: 100%;
     font-size: clamp(0.92rem, 1.05vw, 1.2rem);
     line-height: 1.35;
   }
@@ -558,13 +585,14 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
   }
 
   .about-hero .about-text-copy {
-    background-color: rgba(23, 21, 43, 0.74);
+    align-self: center;
+    background-color: var(--color-overlay-surface);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    margin-inline: -1.5rem;
-    max-width: none;
-    width: calc(100% + 3rem);
+    margin-inline: 0;
+    max-width: 74rem;
+    width: 100%;
   }
 }
 
@@ -629,20 +657,13 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
   overflow-x: hidden;
 }
 
-.contact-page > * {
+.contact-page > *:not(.fixed-logo) {
   position: relative;
   z-index: 1;
 }
 
 .contact-page .contact-content {
   transform: none;
-}
-
-.contact-page .fixed-logo {
-  --logo-width: clamp(160px, 26vw, 300px);
-  left: 0;
-  position: fixed;
-  top: 0;
 }
 
 .contact-page .contact-hero {
@@ -674,6 +695,21 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
   justify-content: center;
   justify-items: center;
   margin-top: 0.25rem;
+}
+
+.contact-page .contact-card-zone {
+  background-color: var(--color-overlay-surface);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 5rem auto 2rem;
+  max-width: 800px;
+  padding: 1rem;
+  width: calc(100% - 2rem);
+}
+
+.contact-page .contact-card-zone > .section {
+  padding: 0.25rem 0 0;
 }
 
 .contact-page .contact-card {
@@ -1144,35 +1180,49 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 }
 
 .home-values-section {
-  align-items: start;
   background-color: var(--color-highlight);
-  display: grid;
-  gap: 1rem 2rem;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   margin: 0;
   max-width: none;
   padding: 4.5rem max(1.5rem, calc((100vw - var(--max-width)) / 2 + 1.5rem)) 3rem;
 }
 
-.home-values-section > h2 {
-  grid-column: 1;
+.home-values-intro {
+  align-items: start;
+  background-color: var(--color-overlay-surface);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: #fff;
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: minmax(0, 1fr);
+  margin: 0 auto 1.5rem;
+  max-width: var(--max-width);
+  padding: 1.5rem 2rem;
+  width: 100%;
+}
+
+.home-values-intro > h2 {
+  color: #fff;
+  grid-column: 1 / -1;
   margin: 0;
 }
 
-.home-values-section > p {
-  align-self: center;
-  border-left: 2px solid var(--color-accent);
-  color: var(--color-muted);
-  grid-column: 2;
+.home-values-intro > p {
+  align-self: stretch;
+  border-left: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.9);
+  grid-column: 1 / -1;
   margin: 0;
-  max-width: 46rem;
-  padding-left: 1rem;
+  max-width: none;
+  padding: 0.75rem 0 0;
 }
 
 .home-values-section .value-list {
   gap: 1.25rem;
-  grid-column: 1 / -1;
-  margin-top: 0.5rem;
+  margin: 0 auto;
+  max-width: var(--max-width);
 }
 
 .home-values-section .value-list li {
@@ -1192,26 +1242,30 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 
 @media (max-width: 767px) {
   .home-values-section {
-    gap: 0.85rem;
-    grid-template-columns: minmax(0, 1fr);
     padding-bottom: 2.5rem;
-    padding-top: 5rem;
+    padding-top: 3rem;
   }
 
-  .home-values-section > h2,
-  .home-values-section > p,
-  .home-values-section .value-list {
+  .home-values-intro {
+    gap: 0.85rem;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 1.25rem;
+  }
+
+  .home-values-intro > h2,
+  .home-values-intro > p {
     grid-column: 1;
   }
 
-  .home-values-section > p {
+  .home-values-intro > p {
     border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.38);
     padding-left: 0;
+    padding-top: 0.75rem;
   }
 
   .home-values-section .value-list {
     gap: 0.85rem;
-    margin-top: 0.5rem;
   }
 }
 
@@ -1551,10 +1605,14 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 }
 
 .project-hero-overlay {
+  background-color: var(--color-overlay-surface);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   color: #fff;
   margin-left: max(1.5rem, calc((100vw - var(--max-width)) / 2 + 1.5rem));
   max-width: min(42rem, calc(100% - 3rem));
-  padding: 0;
+  padding: 1.25rem 1.5rem;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
 }
 
@@ -1789,7 +1847,7 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
   .project-hero-overlay {
     margin-left: 0;
     max-width: 100%;
-    padding: 0;
+    padding: 1rem;
   }
 
   .project-hero h1 {
@@ -1878,11 +1936,11 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 }
 
 @media (min-width: 768px) and (max-width: 1099px) {
-  body:not(.project-page) .nav-menu[data-collapsed="true"] {
+  body .nav-menu[data-collapsed="true"] {
     position: relative;
   }
 
-  body:not(.project-page) .nav-menu[data-collapsed="true"] > summary {
+  body .nav-menu[data-collapsed="true"] > summary {
     background-color: rgba(255, 255, 255, 0.16);
     border: 1px solid rgba(255, 255, 255, 0.75);
     border-radius: var(--radius);
@@ -1897,19 +1955,19 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
     text-align: center;
   }
 
-  body:not(.project-page) .nav-menu[data-collapsed="true"] > summary::-webkit-details-marker {
+  body .nav-menu[data-collapsed="true"] > summary::-webkit-details-marker {
     display: none;
   }
 
-  body:not(.project-page) .nav-menu[data-collapsed="true"] > summary::after {
+  body .nav-menu[data-collapsed="true"] > summary::after {
     content: " +";
   }
 
-  body:not(.project-page) .nav-menu[data-collapsed="true"][open] > summary::after {
+  body .nav-menu[data-collapsed="true"][open] > summary::after {
     content: " -";
   }
 
-  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul {
+  body .main-nav > .nav-menu[data-collapsed="true"] > ul {
     background-color: var(--color-primary-dark);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius);
@@ -1924,55 +1982,38 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
     top: calc(100% + 0.5rem);
   }
 
-  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"][open] > ul {
+  body .main-nav > .nav-menu[data-collapsed="true"][open] > ul {
     display: flex;
   }
 
-  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul > li,
-  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul > li > details,
-  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul > li > a,
-  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul > li > details > summary {
+  body .main-nav > .nav-menu[data-collapsed="true"] > ul > li,
+  body .main-nav > .nav-menu[data-collapsed="true"] > ul > li > details,
+  body .main-nav > .nav-menu[data-collapsed="true"] > ul > li > a,
+  body .main-nav > .nav-menu[data-collapsed="true"] > ul > li > details > summary {
     width: 100%;
   }
 
-  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul > li > a,
-  body:not(.project-page) .main-nav > .nav-menu[data-collapsed="true"] > ul > li > details > summary {
+  body .main-nav > .nav-menu[data-collapsed="true"] > ul > li > a,
+  body .main-nav > .nav-menu[data-collapsed="true"] > ul > li > details > summary {
     display: block;
     text-align: left;
   }
 
-  body:not(.project-page) .main-nav .student-menu-list {
+  body .main-nav .student-menu-list {
     left: auto;
     margin-top: 0.25rem;
     position: static;
     width: 100%;
   }
 
-  .student-page .site-header .nav-menu[data-collapsed="true"] > summary {
-    background-color: var(--color-surface);
-    border-color: var(--color-border);
-    color: var(--color-primary-dark);
-  }
-
-  .student-page .site-header .main-nav > .nav-menu[data-collapsed="true"] > ul {
-    background-color: var(--color-surface);
-    border-color: var(--color-border);
-  }
-
-  .student-page .site-header .main-nav > .nav-menu[data-collapsed="true"] > ul > li > a,
-  .student-page .site-header .main-nav > .nav-menu[data-collapsed="true"] > ul > li > details > summary {
-    color: var(--color-primary-dark);
-  }
-
-  .student-page .site-header .main-nav > .nav-menu[data-collapsed="true"] > ul > li > a:hover,
-  .student-page .site-header .main-nav > .nav-menu[data-collapsed="true"] > ul > li > details > summary:hover {
-    background-color: var(--color-highlight);
-  }
 }
 
 @media (max-width: 767px) {
-  .fixed-logo {
+  :root {
     --logo-width: clamp(110px, 42vw, 170px);
+  }
+
+  .fixed-logo {
     left: 1rem;
     top: 1rem;
   }
@@ -2053,29 +2094,8 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
     width: 100%;
   }
 
-  .student-page .nav-menu > summary {
-    background-color: var(--color-surface);
-    border-color: var(--color-border);
-    color: var(--color-primary-dark);
-  }
-
   .student-list-page main > .section:first-child {
     padding-top: 7rem;
-  }
-
-  .student-page .main-nav > .nav-menu > ul {
-    background-color: var(--color-surface);
-    border-color: var(--color-border);
-  }
-
-  .student-page .main-nav > .nav-menu > ul > li > a,
-  .student-page .main-nav > .nav-menu > ul > li > details > summary {
-    color: var(--color-primary-dark);
-  }
-
-  .student-page .main-nav > .nav-menu > ul > li > a:hover,
-  .student-page .main-nav > .nav-menu > ul > li > details > summary:hover {
-    background-color: var(--color-highlight);
   }
 
   .hero:not(.contact-hero) {
@@ -2137,7 +2157,7 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
     justify-content: flex-start;
     min-height: max(calc(100vw * 2 / 3), 19rem);
     padding-bottom: 1rem;
-    padding-top: 5rem;
+    padding-top: 4.25rem;
     position: relative;
     transform: none;
     z-index: 1;
@@ -2145,18 +2165,21 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 
   .home-hero .hero-copy {
     max-width: 32rem;
+    margin-bottom: -0.125rem;
+    transform: translateY(-0.125rem);
     width: 100%;
   }
 
   .home-hero .hero-copy h1 {
-    font-size: clamp(1.75rem, 8vw, 2.4rem);
+    font-size: clamp(1.95rem, 8.9vw, 2.7rem);
     line-height: 1.05;
     margin-bottom: 0.5rem;
     max-width: 12ch;
   }
 
   .home-hero .hero-copy p {
-    font-size: 1rem;
+    font-size: 1.12rem;
+    line-height: 1.35;
     margin-bottom: 0.75rem;
   }
 
@@ -2194,21 +2217,26 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
     gap: 0.5rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .contact-page .contact-card-zone {
+    padding: 0.5rem;
+  }
 }
 
 @media (max-width: 360px) {
   .home-hero .hero-copy {
-    padding: 0.55rem;
+    margin-bottom: 0.45rem;
+    padding: 0.25rem;
   }
 
   .home-hero .hero-copy h1 {
-    font-size: 1.55rem;
+    font-size: 1.85rem;
     line-height: 1.02;
     margin-bottom: 0.35rem;
   }
 
   .home-hero .hero-copy p {
-    font-size: 0.92rem;
+    font-size: 1.08rem;
     line-height: 1.2;
     margin-bottom: 0.5rem;
   }
@@ -2219,20 +2247,12 @@ body:not(.project-page):not(.student-page) .site-header .main-nav {
 }
 
 .site-header .container {
-  padding-left: calc(1.5rem + clamp(182px, 31.2vw, 364px) + 1rem);
-}
-
-.student-page .site-header .container {
-  padding-left: calc(1.5rem + clamp(110px, 18vw, 170px) + 1rem);
-}
-
-.contact-page .site-header .container {
-  padding-left: calc(clamp(160px, 26vw, 300px) + 1rem);
+  padding-left: calc(1.5rem + var(--logo-width) + 1rem);
 }
 
 @media (max-width: 767px) {
   .site-header .container {
-    padding-left: calc(1rem + clamp(110px, 42vw, 170px) + 0.75rem);
+    padding-left: calc(1rem + var(--logo-width) + 0.75rem);
   }
 }
 
