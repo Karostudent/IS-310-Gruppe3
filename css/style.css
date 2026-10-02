@@ -1430,13 +1430,13 @@ body .site-header .main-nav {
 }
 
 .profile-sidebar {
-  width: 160px;
+  width: 100%;
 }
 
 .student-project {
   align-self: start;
   text-align: center;
-  width: 160px;
+  width: 100%;
 }
 
 .student-project h2 {
