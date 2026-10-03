@@ -39,6 +39,8 @@ py -m http.server 8000
 
 Åpne deretter [http://localhost:8000](http://localhost:8000) i nettleseren. Stopp serveren med `Ctrl+C`.
 
+Nettsiden er også publisert, og finnes på denne adressen: https://karostudent.github.io/IS-310-Gruppe3/index.html
+
 ## Oppdater innhold
 
 - Rediger tekst og lenker direkte i den aktuelle HTML-filen.
