@@ -387,6 +387,7 @@ img {
 
 .home-hero .hero-copy h1 {
   font-size: clamp(2.75rem, 5.6vw, 5.4rem);
+  transform: translateY(-0.75rem);
 }
 
 .home-hero .hero-copy p {
@@ -1807,6 +1808,14 @@ body .site-header .main-nav {
   margin: 0;
   overflow: hidden;
   border-radius: 16px;
+}
+
+.solution-grid figcaption {
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #fff;
+  text-align: center;
 }
 
 .solution-grid img,

@@ -33,15 +33,13 @@ images/                    Logoer, portretter, prosjektbilder og video
 
 Du trenger Python 3 for å starte en enkel lokal webserver. Åpne PowerShell eller en terminal i prosjektmappen og kjør:
 
-```powershell
-py -m http.server 8000
+```bash
+python3 -m http.server
 ```
 
-Åpne deretter [http://localhost:8000](http://localhost:8000) i nettleseren. Stopp serveren med `Ctrl+C`.
+og gå til `http://localhost:8000` i nettleseren.
 
-## Oppdater innhold
+### Oppdatere studentpresentasjoner
 
-- Rediger tekst og lenker direkte i den aktuelle HTML-filen.
-- Studentprofilene ligger i `studenter/`. Oppdater også kortene på `møt-studentene.html` hvis navn, portrett eller introduksjon endres.
-- Bilder, logoer og video ligger under `images/`. Behold filstiene i HTML-en når ressurser flyttes eller byttes.
-- Felles layout og mobiltilpasning ligger i `css/style.css`.
+Bytt ut plassholderteksten, avatar-initialene og lenkene til LinkedIn/GitHub i hver
+`studenter/studentN.html`-fil med den aktuelle studentens egen informasjon.
