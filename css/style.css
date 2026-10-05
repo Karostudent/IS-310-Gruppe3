@@ -398,7 +398,8 @@ img {
 
 .home-hero .container {
   justify-content: center;
-  transform: translate(-8rem, 9rem);
+  /* Flytter teksten til venstre bare så langt det er ledig plass ved siden av innholdet */
+  transform: translate(calc(-1 * min(8rem, max(0px, (100vw - var(--max-width)) / 2 - 1rem))), 9rem);
 }
 
 .home-hero .hero-copy {
@@ -467,7 +468,7 @@ img {
 
 @media (min-width: 768px) and (max-width: 1099px) {
   .home-hero .container {
-    transform: translate(-5rem, 7rem);
+    transform: translate(0, 7rem);
   }
 }
 
@@ -551,6 +552,9 @@ body .site-header .main-nav {
   background-color: var(--color-highlight);
   border: 1px solid var(--color-border);
   color: var(--color-primary-dark);
+  align-items: center;
+  display: inline-flex;
+  gap: 0.75rem;
 }
 
 .student-list-page .student-content-zone > .section > h2,
@@ -968,13 +972,24 @@ body .site-header .main-nav {
   margin-bottom: 0.15rem;
 }
 
-@media (max-width: 820px) {
+@media (max-width: 1000px) {
   .contact-layout {
     grid-template-columns: 1fr;
   }
 
+  /* Kontaktkortene først når kolonnene legges under hverandre */
+  .contact-people {
+    order: -1;
+  }
+
   .contact-page .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-page .contact-grid {
+    grid-template-columns: minmax(0, 280px);
   }
 }
 
@@ -1509,8 +1524,8 @@ body .site-header .main-nav {
   border: 0;
   max-width: none;
   padding: 0;
-  transform: translateX(1rem);
-  width: calc(100% + 9rem);
+  transform: translateX(min(1rem, max(0px, (100vw - var(--max-width)) / 2)));
+  width: calc(100% + min(9rem, max(0px, (100vw - var(--max-width)) / 2 - 1rem)));
 }
 
 .home-about-section .about-video {
@@ -1579,6 +1594,24 @@ body .site-header .main-nav {
 
   .home-about-section .about-video {
     height: auto;
+  }
+}
+
+/* Nettbrett: tekst og video under hverandre, boksene i én kolonne */
+@media (max-width: 959px) {
+  .home-about-section {
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .home-about-section .home-video-placeholder {
+    order: -1;
+    transform: none;
+    width: 100%;
+  }
+
+  .home-page .about-highlights {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2688,7 +2721,6 @@ body .site-header .main-nav {
 
   .contact-page .contact-grid {
     gap: 0.5rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .contact-page .contact-card-zone {
