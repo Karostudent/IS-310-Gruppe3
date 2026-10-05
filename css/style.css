@@ -138,6 +138,7 @@ img {
   text-decoration: none;
 }
 
+.main-nav > ul,
 .main-nav > .nav-menu > ul {
   list-style: none;
   display: flex;
@@ -165,7 +166,7 @@ img {
 .main-nav a:focus,
 .main-nav a.active {
   background-color: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.75);
+  border-color: transparent;
   color: #fff;
   text-decoration: none;
 }
@@ -371,13 +372,29 @@ img {
 }
 
 .home-hero {
-  background-image: url("../images/Hoyrestilt_cropped.jpg");
+  background-image: none;
   background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+.home-hero-image {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+.home-hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .home-hero .container {
   justify-content: center;
-  transform: translateY(-2.5rem);
+  transform: translate(-8rem, 9rem);
 }
 
 .home-hero .hero-copy {
@@ -411,6 +428,10 @@ img {
   width: 80%;
 }
 
+.home-values-section > .home-video-placeholder {
+  margin: 0 auto 1.5rem;
+}
+
 .home-hero .home-values-cta {
   align-items: center;
   background-color: var(--color-highlight);
@@ -442,7 +463,7 @@ img {
 
 @media (min-width: 768px) and (max-width: 1099px) {
   .home-hero .container {
-    transform: translateY(-2rem);
+    transform: translate(-5rem, 7rem);
   }
 }
 
@@ -458,6 +479,12 @@ body .site-header .main-nav {
   padding: 0.25rem;
 }
 
+.home-page .site-header .main-nav a.active,
+.home-page .site-header .main-nav a:hover,
+.home-page .site-header .main-nav a:focus {
+  border-color: transparent;
+}
+
 .student-list-page .student-content-zone {
   background-color: var(--color-overlay-surface);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -465,8 +492,8 @@ body .site-header .main-nav {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10rem;
-  padding: 2rem 1.5rem 0;
+  margin-top: 6rem;
+  padding: 1rem 1.25rem 0;
   width: calc(100% - 1.5rem);
 }
 
@@ -490,6 +517,10 @@ body .site-header .main-nav {
   background: url("../images/Trees.png") center / cover no-repeat fixed;
 }
 
+.student-list-page .fixed-logo {
+  width: clamp(140px, 18vw, 240px);
+}
+
 .student-list-page .student-content-zone > .section > h2 {
   color: #fff;
   text-shadow: 0 1px 4px rgba(23, 21, 43, 0.8);
@@ -498,6 +529,39 @@ body .site-header .main-nav {
 .student-list-page .student-content-zone > .section > p {
   color: #fff;
   text-shadow: 0 1px 4px rgba(23, 21, 43, 0.8);
+}
+
+.student-list-page .home-values-section {
+  background-color: var(--color-overlay-surface);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: #fff;
+  margin: 2rem 0 0;
+  max-width: none;
+  padding: 2rem 1.5rem;
+}
+
+.student-list-page .home-values-intro {
+  color: #fff;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+  padding: 0;
+  text-align: left;
+}
+
+.student-list-page .home-values-intro > h2,
+.student-list-page .home-values-intro > p {
+  color: #fff;
+}
+
+.student-list-page .home-values-intro > p {
+  border-top-color: rgba(255, 255, 255, 0.38);
+}
+
+.student-list-page .home-values-section .value-list li {
+  color: var(--color-text);
 }
 
 .about-page > .hero {
@@ -679,15 +743,6 @@ body .site-header .main-nav {
   margin-bottom: 0.4rem;
 }
 
-.contact-page .contact-hero h1:last-of-type {
-  border-top: 1px solid rgba(255, 255, 255, 0.32);
-  font-size: 1.75rem;
-  line-height: 1.25;
-  margin: 1.1rem auto 0;
-  max-width: 46rem;
-  padding-top: 0.85rem;
-}
-
 .contact-page .contact-hero p {
   font-size: 1.05rem;
   line-height: 1.5;
@@ -711,8 +766,8 @@ body .site-header .main-nav {
 }
 
 .contact-page .contact-grid {
-  gap: 1.5rem;
-  grid-template-columns: repeat(2, minmax(0, 350px));
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 280px));
   justify-content: center;
   justify-items: center;
   margin-top: 0.25rem;
@@ -723,9 +778,9 @@ body .site-header .main-nav {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  margin: 5rem auto 2rem;
+  margin: 3rem auto 1rem;
   max-width: 800px;
-  padding: 1rem;
+  padding: 0.75rem;
   width: calc(100% - 2rem);
 }
 
@@ -736,13 +791,13 @@ body .site-header .main-nav {
 .contact-page .contact-card {
   background-color: var(--color-highlight);
   justify-self: center;
-  padding: 1rem;
-  width: min(100%, 350px);
+  padding: 0.75rem;
+  width: min(100%, 280px);
 }
 
 .contact-page .contact-card img {
   aspect-ratio: 4 / 5;
-  max-width: none;
+  max-width: 190px;
   margin-bottom: 0.5rem;
   width: 100%;
 }
@@ -1087,7 +1142,7 @@ body .site-header .main-nav {
 .student-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .student-list-page .student-grid .card {
@@ -1109,7 +1164,7 @@ body .site-header .main-nav {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 1.75rem 1.5rem;
+  padding: 1rem 1.25rem;
   text-align: center;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   position: relative;
@@ -1128,12 +1183,12 @@ body .site-header .main-nav {
 }
 
 .card .avatar {
-  width: 160px;
-  height: 160px;
+  width: 125px;
+  height: 125px;
   border-radius: 50%;
   background-color: var(--color-highlight);
   overflow: hidden;
-  margin: 0 auto 1rem;
+  margin: 0 auto 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1156,7 +1211,7 @@ body .site-header .main-nav {
 .card .role {
   color: var(--color-muted);
   font-size: 0.95rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 
 .card-links a {
@@ -1201,7 +1256,7 @@ body .site-header .main-nav {
 }
 
 .home-values-section {
-  background-color: var(--color-highlight);
+  background-color: var(--color-bg);
   margin: 0;
   max-width: none;
   padding: 4.5rem max(1.5rem, calc((100vw - var(--max-width)) / 2 + 1.5rem)) 3rem;
@@ -1209,11 +1264,11 @@ body .site-header .main-nav {
 
 .home-values-intro {
   align-items: start;
-  background-color: var(--color-overlay-surface);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  border: 0;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  color: #fff;
+  box-shadow: none;
+  color: var(--color-text);
   display: grid;
   gap: 0.85rem;
   grid-template-columns: minmax(0, 1fr);
@@ -1224,7 +1279,7 @@ body .site-header .main-nav {
 }
 
 .home-values-intro > h2 {
-  color: #fff;
+  color: var(--color-primary-dark);
   grid-column: 1 / -1;
   margin: 0;
 }
@@ -1232,8 +1287,8 @@ body .site-header .main-nav {
 .home-values-intro > p {
   align-self: stretch;
   border-left: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.38);
-  color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text);
   grid-column: 1 / -1;
   margin: 0;
   max-width: none;
@@ -1244,6 +1299,50 @@ body .site-header .main-nav {
   gap: 1.25rem;
   margin: 0 auto;
   max-width: var(--max-width);
+}
+
+.home-about-section {
+  align-items: center;
+  display: grid;
+  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  margin: 3rem auto 0;
+  max-width: var(--max-width);
+}
+
+.home-about-copy {
+  color: var(--color-text);
+}
+
+.home-about-copy h2 {
+  color: var(--color-primary-dark);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 1.15;
+  margin: 0 0 0.7rem;
+}
+
+.home-about-copy p {
+  margin: 0 0 0.9rem;
+}
+
+.home-about-copy .home-about-lead {
+  color: var(--color-muted);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.home-about-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.home-about-section .home-video-placeholder {
+  background-color: transparent;
+  border: 0;
+  max-width: none;
+  padding: 0;
+  width: 100%;
 }
 
 .home-values-section .value-list li {
@@ -1287,6 +1386,15 @@ body .site-header .main-nav {
 
   .home-values-section .value-list {
     gap: 0.85rem;
+  }
+
+  .home-about-section {
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .home-about-section .home-video-placeholder {
+    order: -1;
   }
 }
 
@@ -2251,7 +2359,7 @@ body .site-header .main-nav {
   }
 
   .hero.home-hero::before {
-    background-image: url("../images/Hoyrestilt_cropped.jpg");
+    background-image: url("../images/Zoomed ut.jpg");
     background-position: center top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -2309,13 +2417,6 @@ body .site-header .main-nav {
 
   .contact-page .contact-hero h1 {
     font-size: 2rem;
-  }
-
-  .contact-page .contact-hero h1:last-of-type {
-    font-size: 1.25rem;
-    line-height: 1.25;
-    margin-top: 0.85rem;
-    padding-top: 0.7rem;
   }
 
   .contact-page .contact-hero p {
