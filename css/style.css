@@ -2788,3 +2788,9 @@ body .site-header .main-nav {
   border-radius: 999px;
   box-shadow: 0 2px 10px rgba(23, 21, 43, 0.08);
 }
+
+/* Gir luft over videoen når "Se promovideo" scroller hit,
+   slik at den faste logoen ikke dekker den */
+#promo-video {
+  scroll-margin-top: 7rem;
+}
