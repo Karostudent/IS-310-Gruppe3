@@ -1644,6 +1644,24 @@ body .site-header .main-nav {
   content: "";
   inset: 0;
   position: absolute;
+  border-radius: var(--radius);
+}
+
+/* transform på knappen ville gjort den til containing block for ::after,
+   slik at klikkflaten krymper til knappen. Løft hele kortet i stedet. */
+.practice-card > .btn:hover,
+.practice-card > .btn:focus {
+  transform: none;
+}
+
+.practice-card:hover > .btn,
+.practice-card:focus-within > .btn {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.practice-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(23, 21, 43, 0.14);
 }
 
 .practice-card:hover {
