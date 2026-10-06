@@ -1,15 +1,26 @@
 (function () {
   var trigger = document.querySelector('[data-play-video]');
   var video = document.getElementById('promo-video');
-  if (!trigger || !video) return;
+  if (!video) return;
 
-  // Lenken scroller til videoen. Avspillingen må starte i selve klikket,
-  // fordi nettlesere bare tillater lyd etter en brukerhandling.
+  // Når videoen er ferdig, vis forsidebildet (posteren) igjen
+  video.addEventListener('ended', function () {
+    video.load();
+  });
+
+  if (!trigger) return;
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
   trigger.addEventListener('click', function () {
-    var p = video.play();
-    if (p && p.catch) {
-      // Blokkert? Da står videoen klar med kontroller, og brukeren trykker play selv.
-      p.catch(function () {});
+    // Ber brukeren om mindre bevegelse: scroll til videoen, men la dem starte selv
+    if (!reduceMotion.matches) {
+      var p = video.play();
+      if (p && p.catch) {
+        p.catch(function () {});
+      }
     }
+    // Fokus til videoen, så Mellomrom pauser/spiller av med en gang
+    video.focus({ preventScroll: true });
   });
 })();
