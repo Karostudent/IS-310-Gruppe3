@@ -37,7 +37,8 @@
           <p>Seks ulike perspektiver. Ett felles mål.</p>
         </div>
 
-        <a class="btn home-values-cta" href="#home-about-heading">
+        <a class="btn home-values-cta" href="#promo-video" data-play-video
+   aria-label="Se promovideo – hopper til videoen og starter avspilling">
           Se promovideo
           <span class="home-values-cta-icon" aria-hidden="true">&darr;</span>
         </a>
@@ -71,8 +72,7 @@
         </div>
 
         <div class="home-video-placeholder">
-          <video class="about-video" controls preload="metadata" playsinline poster="images/Video/Video-poster.jpg">
-            <source src="images/Video/Video.mp4" type="video/mp4" />
+<video class="about-video" id="promo-video" controls preload="metadata" playsinline poster="images/Video/Video-poster.jpg">            <source src="images/Video/Video.mp4" type="video/mp4" />
             Nettleseren din støtter ikke videoavspilling.
           </video>
         </div>
@@ -125,5 +125,6 @@ Samtidig jobber vi strukturert, fordeler ansvar og tar felles eierskap til det v
     </div>
   </footer>
   <script src="js/logo-scroll.js"></script>
+  <script src="js/promo-video.js"></script>
 </body>
 </html>
