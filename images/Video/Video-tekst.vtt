@@ -1,0 +1,5 @@
+<video class="about-video" controls preload="metadata" playsinline poster="images/Video/Video-poster.jpg">
+  <source src="images/Video/Video.mp4" type="video/mp4" />
+  <track kind="captions" src="images/Video/Video-tekst.vtt" srclang="no" label="Norsk" default />
+  Nettleseren din støtter ikke videoavspilling.
+</video>

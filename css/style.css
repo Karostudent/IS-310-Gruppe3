@@ -382,15 +382,69 @@ img {
   position: relative;
 }
 
-.home-hero-image {
-  height: 100%;
+.home-hero-media {
   inset: 0;
-  object-fit: cover;
   position: absolute;
-  width: 100%;
   z-index: 0;
 }
 
+.home-hero-video {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.hero-play {
+  align-items: center;
+  background: rgba(23, 21, 43, 0.6);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  bottom: clamp(1.5rem, 8vh, 4rem);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  height: 5rem;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  right: clamp(1.5rem, 6vw, 5rem);
+  transition: background-color 0.15s ease, transform 0.15s ease;
+  width: 5rem;
+}
+
+.hero-play:hover {
+  background: rgba(23, 21, 43, 0.85);
+  transform: scale(1.06);
+}
+
+.hero-play:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+/* La klikk gå gjennom til videoen, men behold klikkbare lenker og tekst */
+.home-hero .container {
+  pointer-events: none;
+}
+
+.home-hero .hero-copy,
+.home-hero .btn,
+.home-hero .scroll-indicator a {
+  pointer-events: auto;
+}
+
+/* Når videoen spilles: tone ut tekst og knapper */
+.home-hero .container,
+.hero-play {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.home-hero.is-playing .container,
+.home-hero.is-playing .hero-play {
+  opacity: 0;
+  visibility: hidden;
+}
 .home-hero .container {
   position: relative;
   z-index: 1;
@@ -2644,10 +2698,20 @@ body .site-header .main-nav {
   }
 
   .hero.home-hero::before {
-    background-image: url("../images/Zoomed ut.jpg");
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: contain;
+    display: none;
+  }
+
+  .home-hero-media {
+    aspect-ratio: 16 / 9;
+    inset: auto;
+    position: relative;
+  }
+
+  .hero-play {
+    bottom: 0.75rem;
+    height: 4rem;
+    right: 0.75rem;
+    width: 4rem;
   }
 
   .hero.home-hero .container {

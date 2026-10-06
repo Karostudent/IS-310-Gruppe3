@@ -30,7 +30,16 @@
 
   <main>
     <section class="hero home-hero">
-      <img class="home-hero-image" src="images/Zoomed%20ut.jpg" alt="" aria-hidden="true" />
+      <div class="home-hero-media">
+  <video class="home-hero-video" id="hero-video" preload="metadata" playsinline
+         poster="images/Zoomed%20ut.jpg" aria-label="Presentasjonsvideo av Perspektiv">
+    <source src="images/Video/Video.mp4" type="video/mp4" />
+    Nettleseren din støtter ikke videoavspilling.
+  </video>
+  <button type="button" class="hero-play" id="hero-play" aria-label="Spill av video">
+    <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+  </button>
+</div>
       <div class="container">
         <div class="hero-copy">
           <h1><span>Sammen om </span>å se det store bildet.</h1>
@@ -70,12 +79,7 @@
           <p><strong>Det er der navnet vårt kommer fra: Perspektiv.</strong></p>
         </div>
 
-        <div class="home-video-placeholder">
-          <video class="about-video" controls preload="metadata" playsinline poster="images/Video/Video-poster.jpg">
-            <source src="images/Video/Video.mp4" type="video/mp4" />
-            Nettleseren din støtter ikke videoavspilling.
-          </video>
-        </div>
+    
       </div>
     </section>
 
@@ -112,7 +116,7 @@ Samtidig jobber vi strukturert, fordeler ansvar og tar felles eierskap til det v
       </article>
     </section>
 
-   
+  </main>
     
 
 
@@ -125,5 +129,6 @@ Samtidig jobber vi strukturert, fordeler ansvar og tar felles eierskap til det v
     </div>
   </footer>
   <script src="js/logo-scroll.js"></script>
+  <script src="js/hero-video.js"></script>
 </body>
 </html>
