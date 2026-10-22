@@ -1749,11 +1749,9 @@ body .site-header .main-nav {
 
 .student-page {
   background: url("../images/Trees.png") center / cover no-repeat;
-  height: 100vh;
-  height: 100svh;
   min-height: 100vh;
   min-height: 100svh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .student-page .fixed-logo {
@@ -1761,11 +1759,8 @@ body .site-header .main-nav {
 }
 
 .student-page main {
-  height: calc(100vh - 4.25rem);
-  height: calc(100svh - 4.25rem);
   min-height: calc(100vh - 4.25rem);
   min-height: calc(100svh - 4.25rem);
-  overflow: hidden;
 }
 
 .student-page main > .section:first-of-type {
